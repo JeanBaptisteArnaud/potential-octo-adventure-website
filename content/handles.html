@@ -1,0 +1,21 @@
+--- 
+title: Handles
+---
+
+#Handle
+Only for mac (let me time to fix my project on Jenkins):[VMMac](../ressources/CautionExperimentalHandleVM.zip)
+
+Cleanup soon:[LinkToImage](https://ci.lille.inria.fr/pharo/job/HandleImages/lastSuccessfulBuild/artifact/Handle.zip)
+
+A handle is a transparent reference to a target object.
+(1) A handle can define different behavior than the target object. When the message foo is sent via the reference the handle executes its own methods using the identity and the state of the target object. If a method is not defined in the handle, but in the target, it will not be accessible to the handle client. Multiple handles can have the same target object. A target still can be accessible via a normal reference. It is the responsibility of the infrastructure built on top of handles to ensure the adequate use of properties and references. In its current version, the Handle framework does not keep the target class and its shadow synchronized automatically.
+
+![Handle principle](../figures/NewHandlePrinciple.jpg "Handle principle")
+
+(2) A handle can 'guard' the state of the target object, a handle can have different state than the target object. If a method try to access or change the state thought the handle, it will remains local to the handle. Obviously again, a target still can be accessible via a normal reference.
+
+![State guarding](../figures/StateGuarding1.jpg "State guarding principle")
+
+(3) One of the key aspect of the handle is the automatic propagation of the Properties. The Handle is used for define properties, such Readonly,etc.. If you define a way to automatically propagate this property(basically how to configure the handle), it will be applied automatically when the object of the subgraph will access.
+
+![Propagation](../figures/newPropagationV2.jpg "Propagation principle")

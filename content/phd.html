@@ -1,0 +1,93 @@
+--- 
+title: Research
+---
+
+From October 2009 to March 2013, I was PhD student at INRIA Lille in the RMod team direct by Stephane Ducasse. The goal of RMoD is to support remodularization of object-oriented applications. This objective is tackled from two complementary perspectives: reengineering and modularity constructs for programming languages.
+
+I defended my Ph.D the 18th february 2013, at IRCICA.
+
+## Phd Topic
+Ensure: reconciling reflection and security
+Keywords : dynamic languages, reflective programming, open-system, security, capabilities, language design, virtual machine Scientific context.
+
+More and more applications require dynamic behavior, often based on the possibility to modify the execution itself. Such changes of behavior are often based on reflective features. Dynamic scripting-like languages get more and more presence: Languages like Lua gets embedded in Adobe Photoshop, F-Script can be embedded in any Cocoa Mac OS X applications and take control of the applications without any control, Javascript applications share the same execution environment in a web-browser, so malicious ads could easily access private data. In languages such as Ruby, Python, Smalltalk, it is possible to nearly change any aspect of an applications: load untrusted code, change objects… which is clearly a total lack of security. There are some approaches to control code execution but this is often based on a closed world assumption, limited to resources control or a minimal subset of Java bytecode.  The goal of this PhD is to study how it is possible to reconcile dynamic and reflective languages with secure applications. The idea is not to validate bytecodes as this is often done but to evaluate how by construction and control of reflective features it is possible to control and create sandbox for programs execution.
+
+## Title
+Towards First Class References as a Security Infrastructure in Dynamically-Typed Languages
+
+## Resume
+Dynamically-typed object-oriented programming languages do not provide type information until runtime. Two of their main advantages are that they allow fast prototyping and integrating changes at runtime. The ability of dynamically-typed languages to support program changes at runtime and the lack of type information doom the classic security approaches to failure. Controlling references to single objects and to graphs of objects is essential to build secure systems. Existing approaches are commonly based on static type system and cannot be applied to dynamically-typed languages.
+This thesis argue that:
+In the context of dynamically-typed languages, reifying references, controlling behavior, and isolating state via such references, is a practical way to control references.
+This thesis makes five contributions:
++ We propose dynamic read-only objects (DRO) as one kind of adaptation of behavioral change at
+reference-level.
++ We generalize the DRO model to enable more generic behavioral changes. We extend the Pharo programming environment and language with Handles, that are first-class references with the ability to change the behavior of referenced objects.
++ We define Metahandle to offer flexibility and adaptability to controlled references.
++ We propose SHandle, an extension of the Handle model to isolate side effects at the level of references. - And finally, we formalize the Handles and SHandle models to represent and explain their semantics.
+
+As validation of our thesis we have implemented three approaches relevant to securing system using our model. In addition, as proof of concept we extended the Pharo virtual machine to support Handles, Metahandles and SHandles.
+Keyword: security, dynamically-typed languages, reflection, language design, first class reference, object- oriented programming.
+
+### scientific challenges
+Dynamically-typed programming languages do not provide type information until run-time.The ability of dynamically-typed languages to support program changes at runtime and the lack of type information until runtime are also their biggest weaknesses. These weaknesses doom static analysis to failure. Analyzing an application statically means ex- amining the code to extract an understanding without executing it. Static analysis is principally used to ensure that the code structure respects a specific standard of quality and security.
+
+In a context where an application can change at runtime, the system developers must ensure that the application cannot trigger undesirable behavior such that harming the system and collecting private information. The most commonly used way to prevent undesirable behavior is to severely limit the expressivity of the programming language. However, what is really needed is only to limit the impacts the application can have on the rest of the system.
+
+Our solution focuses on the problem of controlling references.
+
+### Solution
+Our solution is the Handle a reification reference as special object. Handles are first-class references that propagate behavioral changes dynamically to the object subgraph during program execution. In addition Handle are allow to keep the state change of the accessed object. For more information please refer to my thesis.
+
+## Applications
+We validate our solution by implementing three approaches representing security or safety features commonly used. 
+
+### Transactional memory
+Concurrent programming is control simultaneous execution of multiple interacting computations. The objective is to improve the use of available hardware resources more efficiently. In some domains such as distributed systems, concurrency control is mandatory.
+Software Transactional Memory (STM) is a modern paradigm, based on transaction synchronization, which takes a different approach from conventional approaches such as mutual exclusion and message passing; software transactional memory, is seen by some as a more user-friendly approach to synchronization.
+
+Software transactional memory provides high-level mechanisms to control mutual exclusion, based on the concept of atomic block used to encapsulate execution. The transaction begins when entering in an atomic block and finishes when leaving it.
+
+Software transactional memory ensures that the change introduced by the computation will be fully performed or not at all. there exist several kinds of STM systems, defining different semantics for the atomic block, and also different interaction between normal computation and transactional computation.
+
+### Revocable Reference
+ This approach defines specific references that can be revoked when the owner considers they should not be shared anymore.
+ 
+ ![ChallengeBobAndCarolV3](../ressources/phd/ChallengeBobAndCarolV3.png){:#revocable}
+
+The previous figures shows an example with three objects: Alice can give Bob a reference to Doc. But Alice should be able to revoke it later. Bob cannot access it anymore even if he holds a reference to it. The conceptual solution proposed by Miller is to create a revoking facet (R) and pass it to Bob. Such a facet can be seen as an object with a restricted interface or a first-class reference. Note that in this original proposal revocable references are not propagated automatically. The facet needs to be carefully thought to not leak references and only return facets instead.
+
+In the example, Alice has to make sure to wrap all objects discoverable from the reference handed to Bob. Idioms and special safety patterns should be followed by the programmer to make sure that there is no reference leaked by accident. Indeed, imagine that Doc holds a reference to a SubDoc which also has a back pointer to Doc. While Bob cannot access Doc once its reference to Doc is revoked, if Bob gets a reference to SubDoc and this reference is not a revocable one then Bob broke the system and can access Doc even if it should not be able to do so. 
+
+### Read-Only
+
+Mechanisms prohibiting variable mutation are now common in programming languages.
+Java can declare a field as final, and C# has the readonly keyword. The two keywords prevent the fields from being modified by something else than the constructor. C and C++ have the const keyword: a value declared as const can not be changed by any part of the program in any way.
+
+In dynamically-typed languages, few attempts have been made to prohibit variable mutation. One such attempt is immutability, a property embedded in the object itself that define once created the object cannot be modified via any alias.
+
+Our solution to prohibit variable mutation is read-only execution per reference. This form of read-only execution ensures the side-effect free evaluation of code. Read-only execution is often needed when objects taking part in the read-only execution are at the same time (e.g., from another thread of execution) referenced normally with the ability to do side-effects. A clear illustration of this need is assertion execution: within the scope of an assert constraint, objects (reachable from the assertion expressions) should not be modified, else this might lead to subtle bugs depending on whether or not assertions are evaluated.
+
+
+### Benchmark
+The current solution is based on VM modification and have a slowdown of 8%. Handles require to modify and control message sends. Therefore overhead in message sends will induce a cost for all computation. Cost of handle execution. In addition to the general slowdown of the VM, we are especially interested in the overhead of actually using handles in a program. It is clear that the slowdown depends on the behavior that the handles introduce as well as how the handles are used. The slowdown will therefore be different for the kind of handle used (e.g., revocable references, read-only) and in addition will depend on the scenario of actual use.
+
+## Additional results
+During my thesis I aquired some interresting skills and knowledges.
+
+### VM internals
+During my Phd, I have acquired extensive knowledge about virtual machine infrastructure. My solution is based on reyfing reference as object and extend all the virtual machine infrastructure to allow behavior and state change from the reference point of view.
+To make the solution viable, I needed to learn message passing mechanism, object representation (and of course all special case).
+
+### Formal semantics
+As the problematic and the solution presented in my Phd is relativaly complex, I write a formal semantic to describe the impact of my solution on the language itself.
+
+###Paper writing
+In addition I learn the basic of scientific writing. During my Phd, I publish one paper in international conference (TOOL's 2009 rank B), and a Paper is under minor revision in a Journal (SCICO rank A). A poster was also presented at GDR/GPL 2011.
+For more information go into the publication section.
+
+## Ressources
+File: [pdf](../ressources/phd/PhD-2013-Arnaud.pdf), [slides](../ressources/phd/slides.pdf), [bib](../ressources/phd/phd.bib)  
+Sources: Todo
+
+

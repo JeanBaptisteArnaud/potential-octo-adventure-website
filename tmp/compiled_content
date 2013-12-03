@@ -1,0 +1,2281 @@
+{:	data{"/{:default{	:	post"<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - Home</title>
+    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      <h2 id="current-responsibilities">Current responsibilities</h2>
+
+<p>Since March 2013, I&#8217;m  post-doctoral at INRIA Lille in the RMod team¬†direct by Stephane Ducasse. The goal of RMoD is to support remodularization of object-oriented applications. This objective is tackled from two complementary perspectives: reengineering and modularity constructs for programming languages. I am assign to the SafePython Project.</p>
+
+<h2 id="scientific-interest">Scientific Interest</h2>
+<ul>
+  <li>Language design</li>
+  <li>Virtual Machine</li>
+  <li>Security</li>
+  <li>Reflective programming / Reflection</li>
+  <li>Dynamic languages</li>
+  <li>Virtual Machine</li>
+  <li>Low level stuff</li>
+</ul>
+
+    </div>
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
+		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>
+:pre"∏<h2 id="current-responsibilities">Current responsibilities</h2>
+
+<p>Since March 2013, I&#8217;m  post-doctoral at INRIA Lille in the RMod team¬†direct by Stephane Ducasse. The goal of RMoD is to support remodularization of object-oriented applications. This objective is tackled from two complementary perspectives: reengineering and modularity constructs for programming languages. I am assign to the SafePython Project.</p>
+
+<h2 id="scientific-interest">Scientific Interest</h2>
+<ul>
+  <li>Language design</li>
+  <li>Virtual Machine</li>
+  <li>Security</li>
+  <li>Reflective programming / Reflection</li>
+  <li>Dynamic languages</li>
+  <li>Virtual Machine</li>
+  <li>Low level stuff</li>
+</ul>
+:raw"## Current responsibilities
+
+Since March 2013, I'm  post-doctoral at INRIA Lille in the RMod team¬†direct by Stephane Ducasse. The goal of RMoD is to support remodularization of object-oriented applications. This objective is tackled from two complementary perspectives: reengineering and modularity constructs for programming languages. I am assign to the SafePython Project.
+
+
+
+##Scientific Interest
++ Language design
++ Virtual Machine
++ Security
++ Reflective programming / Reflection
++ Dynamic languages
++ Virtual Machine
++ Low level stuff:	last@
+"/teaching/{;{	;"*<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - Teaching</title>
+    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="teach">Teach</h1>
+
+<h2 id="plan">2013-2012 (plan)</h2>
+
+<table class="teach">
+    <thead>
+		<tr class="firstLine">
+        	<th>Audience</th>
+			<th>Label</th>
+			<th>Location</th>
+			<th>Content</th>
+			<th>Hours</th>			
+    	</tr>
+    </thead>
+  	<tbody>
+		<tr>
+		    <td>first year engineering programme(Bachelor equivalent), computer science, ?? students</td>
+			<td>Data Structure in C</td>
+			<td>Polytech Lille</td>
+			<td>practical work</td>
+			<td>44</td>			
+		</tr>	
+	</tbody>
+	<tfoot>
+	<tr class="lastLine">
+        <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>44</th>			
+    </tr>
+	</tfoot>
+</table>
+
+<h2 id="section">2012-2011</h2>
+
+<table class="teach">
+    <thead>
+		<tr class="firstLine">
+        	<th>Audience</th>
+			<th>Label</th>
+			<th>Location</th>
+			<th>Content</th>
+			<th>Hours</th>			
+    	</tr>
+    </thead>
+  	<tbody>
+		<tr>
+		    <td>IT university degree, computer science, 32 students</td>
+			<td>Advance Network</td>
+			<td>IUT Lille1</td>
+			<td>practical work</td>
+			<td>64</td>			
+		</tr>	
+	</tbody>
+	<tfoot>
+	<tr class="lastLine">
+        <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>64</th>			
+    </tr>
+	</tfoot>
+</table>
+
+<h2 id="section-1">2011-2010</h2>
+
+<table class="teach">
+    <thead>
+		<tr class="firstLine">
+        	<th>Audience</th>
+			<th>Label</th>
+			<th>Location</th>
+			<th>Content</th>
+			<th>Hours</th>			
+    	</tr>
+    </thead>
+  	<tbody>
+	<tr>
+        <td>IT university degree, computer science, 22 students</td>
+		<td>Network</td>
+		<td>IUT Lille1</td>
+		<td>practical work</td>
+		<td>16</td>			
+    </tr>
+	<tr>
+        <td>IT university degree,physic measurement, 10 students</td>
+		<td>Oriented Object Programming</td>
+		<td>IUT Lille1</td>
+		<td>teach/practical work</td>
+		<td>24</td>			
+    </tr>
+	<tr>
+        <td>IT university degree,physic measurement , 10 students</td>
+		<td>Oriented Object Programming</td>
+		<td>IUT Lille1</td>
+		<td>teach/practical work</td>
+		<td>24</td>			
+    </tr>
+	</tbody>
+	<tfoot>
+	<tr class="lastLine">
+        <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>64</th>			
+    </tr>
+	</tfoot>
+</table>
+
+<h2 id="section-2">2010-2009</h2>
+
+<table class="teach">
+    <thead>
+		<tr class="firstLine">
+        	<th>Audience</th>
+			<th>Label</th>
+			<th>Location</th>
+			<th>Content</th>
+			<th>Hours</th>			
+    	</tr>
+    </thead>
+  	<tbody>
+		<tr>
+		    <td>IT university degree, computer science, 22 students</td>
+			<td>Network</td>
+			<td>IUT Lille1</td>
+			<td>practical work</td>
+			<td>24</td>			
+		</tr>	
+		<tr>
+		    <td>IT university degree, computer science, 22 students</td>
+			<td>Network</td>
+			<td>IUT Lille1</td>
+			<td>practical work</td>
+			<td>24</td>			
+		</tr>
+		<tr>
+		    <td>IT university degree, computer science, 22 students</td>
+			<td>Programming project</td>
+			<td>IUT Lille1</td>
+			<td>student project</td>
+			<td>16</td>			
+		</tr>
+	</tbody>
+	<tfoot>
+	<tr class="lastLine">
+        <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>64</th>			
+    </tr>
+	</tfoot>
+</table>
+
+<h1 id="supervise">Supervise</h1>
+<ul>
+  <li>
+    <p>Internship 2 years diploma(DUT), Erwan Douaille: Source City<br />
+link: <a href="http://rmod.lille.inria.fr/web/pier/software/SourceCity?_s=pJ8bSHBp4MJUQSiT&amp;_k=DBEuY_8xPnmhTqyU&amp;_n&amp;19">Source City </a></p>
+  </li>
+  <li>
+    <p>Internship 3 years diploma (License), Adrien Barreau, FS integration generation de scripts d&#8217;examples pour coral<br />
+link: <a href="http://rmod.lille.inria.fr/coral/">Coral </a></p>
+  </li>
+</ul>
+
+    </div>
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
+		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>
+;"≈<h1 id="teach">Teach</h1>
+
+<h2 id="plan">2013-2012 (plan)</h2>
+
+<table class="teach">
+    <thead>
+		<tr class="firstLine">
+        	<th>Audience</th>
+			<th>Label</th>
+			<th>Location</th>
+			<th>Content</th>
+			<th>Hours</th>			
+    	</tr>
+    </thead>
+  	<tbody>
+		<tr>
+		    <td>first year engineering programme(Bachelor equivalent), computer science, ?? students</td>
+			<td>Data Structure in C</td>
+			<td>Polytech Lille</td>
+			<td>practical work</td>
+			<td>44</td>			
+		</tr>	
+	</tbody>
+	<tfoot>
+	<tr class="lastLine">
+        <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>44</th>			
+    </tr>
+	</tfoot>
+</table>
+
+<h2 id="section">2012-2011</h2>
+
+<table class="teach">
+    <thead>
+		<tr class="firstLine">
+        	<th>Audience</th>
+			<th>Label</th>
+			<th>Location</th>
+			<th>Content</th>
+			<th>Hours</th>			
+    	</tr>
+    </thead>
+  	<tbody>
+		<tr>
+		    <td>IT university degree, computer science, 32 students</td>
+			<td>Advance Network</td>
+			<td>IUT Lille1</td>
+			<td>practical work</td>
+			<td>64</td>			
+		</tr>	
+	</tbody>
+	<tfoot>
+	<tr class="lastLine">
+        <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>64</th>			
+    </tr>
+	</tfoot>
+</table>
+
+<h2 id="section-1">2011-2010</h2>
+
+<table class="teach">
+    <thead>
+		<tr class="firstLine">
+        	<th>Audience</th>
+			<th>Label</th>
+			<th>Location</th>
+			<th>Content</th>
+			<th>Hours</th>			
+    	</tr>
+    </thead>
+  	<tbody>
+	<tr>
+        <td>IT university degree, computer science, 22 students</td>
+		<td>Network</td>
+		<td>IUT Lille1</td>
+		<td>practical work</td>
+		<td>16</td>			
+    </tr>
+	<tr>
+        <td>IT university degree,physic measurement, 10 students</td>
+		<td>Oriented Object Programming</td>
+		<td>IUT Lille1</td>
+		<td>teach/practical work</td>
+		<td>24</td>			
+    </tr>
+	<tr>
+        <td>IT university degree,physic measurement , 10 students</td>
+		<td>Oriented Object Programming</td>
+		<td>IUT Lille1</td>
+		<td>teach/practical work</td>
+		<td>24</td>			
+    </tr>
+	</tbody>
+	<tfoot>
+	<tr class="lastLine">
+        <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>64</th>			
+    </tr>
+	</tfoot>
+</table>
+
+<h2 id="section-2">2010-2009</h2>
+
+<table class="teach">
+    <thead>
+		<tr class="firstLine">
+        	<th>Audience</th>
+			<th>Label</th>
+			<th>Location</th>
+			<th>Content</th>
+			<th>Hours</th>			
+    	</tr>
+    </thead>
+  	<tbody>
+		<tr>
+		    <td>IT university degree, computer science, 22 students</td>
+			<td>Network</td>
+			<td>IUT Lille1</td>
+			<td>practical work</td>
+			<td>24</td>			
+		</tr>	
+		<tr>
+		    <td>IT university degree, computer science, 22 students</td>
+			<td>Network</td>
+			<td>IUT Lille1</td>
+			<td>practical work</td>
+			<td>24</td>			
+		</tr>
+		<tr>
+		    <td>IT university degree, computer science, 22 students</td>
+			<td>Programming project</td>
+			<td>IUT Lille1</td>
+			<td>student project</td>
+			<td>16</td>			
+		</tr>
+	</tbody>
+	<tfoot>
+	<tr class="lastLine">
+        <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>64</th>			
+    </tr>
+	</tfoot>
+</table>
+
+<h1 id="supervise">Supervise</h1>
+<ul>
+  <li>
+    <p>Internship 2 years diploma(DUT), Erwan Douaille: Source City<br />
+link: <a href="http://rmod.lille.inria.fr/web/pier/software/SourceCity?_s=pJ8bSHBp4MJUQSiT&amp;_k=DBEuY_8xPnmhTqyU&amp;_n&amp;19">Source City </a></p>
+  </li>
+  <li>
+    <p>Internship 3 years diploma (License), Adrien Barreau, FS integration generation de scripts d&#8217;examples pour coral<br />
+link: <a href="http://rmod.lille.inria.fr/coral/">Coral </a></p>
+  </li>
+</ul>
+;	"Ê#Teach
+
+##2013-2012 (plan)
+
+<table class="teach" >
+    <thead>
+		<tr class="firstLine">
+        	<th>Audience</th>
+			<th>Label</th>
+			<th>Location</th>
+			<th>Content</th>
+			<th>Hours</th>			
+    	</tr>
+    </thead>
+  	<tbody>
+		<tr>
+		    <td>first year engineering programme(Bachelor equivalent), computer science, ?? students</td>
+			<td>Data Structure in C</td>
+			<td>Polytech Lille</td>
+			<td>practical work</td>
+			<td>44</td>			
+		</tr>	
+	</tbody>
+	<tfoot>
+	<tr class="lastLine">
+        <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>44</th>			
+    </tr>
+	</tfoot>
+</table>
+
+##2012-2011
+
+<table class="teach" >
+    <thead>
+		<tr class="firstLine">
+        	<th>Audience</th>
+			<th>Label</th>
+			<th>Location</th>
+			<th>Content</th>
+			<th>Hours</th>			
+    	</tr>
+    </thead>
+  	<tbody>
+		<tr>
+		    <td>IT university degree, computer science, 32 students</td>
+			<td>Advance Network</td>
+			<td>IUT Lille1</td>
+			<td>practical work</td>
+			<td>64</td>			
+		</tr>	
+	</tbody>
+	<tfoot>
+	<tr class="lastLine">
+        <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>64</th>			
+    </tr>
+	</tfoot>
+</table>
+
+##2011-2010
+
+
+<table class="teach" >
+    <thead>
+		<tr class="firstLine">
+        	<th>Audience</th>
+			<th>Label</th>
+			<th>Location</th>
+			<th>Content</th>
+			<th>Hours</th>			
+    	</tr>
+    </thead>
+  	<tbody>
+	<tr>
+        <td>IT university degree, computer science, 22 students</td>
+		<td>Network</td>
+		<td>IUT Lille1</td>
+		<td>practical work</td>
+		<td>16</td>			
+    </tr>
+	<tr>
+        <td>IT university degree,physic measurement, 10 students</td>
+		<td>Oriented Object Programming</td>
+		<td>IUT Lille1</td>
+		<td>teach/practical work</td>
+		<td>24</td>			
+    </tr>
+	<tr>
+        <td>IT university degree,physic measurement , 10 students</td>
+		<td>Oriented Object Programming</td>
+		<td>IUT Lille1</td>
+		<td>teach/practical work</td>
+		<td>24</td>			
+    </tr>
+	</tbody>
+	<tfoot>
+	<tr class="lastLine">
+        <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>64</th>			
+    </tr>
+	</tfoot>
+</table>
+
+##2010-2009
+
+
+<table class="teach" >
+    <thead>
+		<tr class="firstLine">
+        	<th>Audience</th>
+			<th>Label</th>
+			<th>Location</th>
+			<th>Content</th>
+			<th>Hours</th>			
+    	</tr>
+    </thead>
+  	<tbody>
+		<tr>
+		    <td>IT university degree, computer science, 22 students</td>
+			<td>Network</td>
+			<td>IUT Lille1</td>
+			<td>practical work</td>
+			<td>24</td>			
+		</tr>	
+		<tr>
+		    <td>IT university degree, computer science, 22 students</td>
+			<td>Network</td>
+			<td>IUT Lille1</td>
+			<td>practical work</td>
+			<td>24</td>			
+		</tr>
+		<tr>
+		    <td>IT university degree, computer science, 22 students</td>
+			<td>Programming project</td>
+			<td>IUT Lille1</td>
+			<td>student project</td>
+			<td>16</td>			
+		</tr>
+	</tbody>
+	<tfoot>
+	<tr class="lastLine">
+        <th></th>
+		<th></th>
+		<th></th>
+		<th></th>
+		<th>64</th>			
+    </tr>
+	</tfoot>
+</table>
+
+
+#Supervise
++ Internship 2 years diploma(DUT), Erwan Douaille: Source City  
+link: [Source City ](http://rmod.lille.inria.fr/web/pier/software/SourceCity?_s=pJ8bSHBp4MJUQSiT&_k=DBEuY_8xPnmhTqyU&_n&19)
+
++ Internship 3 years diploma (License), Adrien Barreau, FS integration generation de scripts d'examples pour coral  
+link: [Coral ](http://rmod.lille.inria.fr/coral/);
+@"/publication/{;{	;"J<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - Publication</title>
+    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      <ul class="publications">
+</ul>
+<h3>International Conferences</h3>
+<ul class="publications">
+
+<li><a name="Arnaud2010readonly">Arnaud2010readonly</a>
+<span class="authors">Jean-Baptiste Arnaud, Marcus Denker, St√©phane Ducasse,
+  Damien Pollet, Alexandre Bergel, and Mathieu Suen</span>.
+<a href="http://people.untyped.org/damien.pollet/publications/2010/Arnaud2010readonly.pdf"><span class="title">Read-Only Execution for Dynamic
+  Languages</span></a>.
+In <em>Tools Europe</em>. Springer Verlag,
+June 2010.
+DOI:&nbsp;<a href="http://dx.doi.org/10.1007/978-3-642-13953-6_7"><code>10.1007/978-3-642-13953-6_7</code></a>.
+(<a href="http://hal.inria.fr/inria-00498377/">HAL</a>)
+<span class="notes">Acceptance: 16/57=28%</span></li>
+
+</ul>
+
+    </div>
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
+		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>
+;"‚<ul class="publications">
+</ul>
+<h3>International Conferences</h3>
+<ul class="publications">
+
+<li><a name="Arnaud2010readonly">Arnaud2010readonly</a>
+<span class="authors">Jean-Baptiste Arnaud, Marcus Denker, St√©phane Ducasse,
+  Damien Pollet, Alexandre Bergel, and Mathieu Suen</span>.
+<a href="http://people.untyped.org/damien.pollet/publications/2010/Arnaud2010readonly.pdf"><span class="title">Read-Only Execution for Dynamic
+  Languages</span></a>.
+In <em>Tools Europe</em>. Springer Verlag,
+June 2010.
+DOI:&nbsp;<a href="http://dx.doi.org/10.1007/978-3-642-13953-6_7"><code>10.1007/978-3-642-13953-6_7</code></a>.
+(<a href="http://hal.inria.fr/inria-00498377/">HAL</a>)
+<span class="notes">Acceptance: 16/57=28%</span></li>
+
+</ul>
+;	"·<ul class='publications'>
+</ul>
+<h3>International Conferences</h3>
+<ul class='publications'>
+
+<li><a name='Arnaud2010readonly'>Arnaud2010readonly</a>
+<span class='authors'>Jean-Baptiste Arnaud, Marcus Denker, St√©phane Ducasse,
+  Damien Pollet, Alexandre Bergel, and Mathieu Suen</span>.
+<a href="http://people.untyped.org/damien.pollet/publications/2010/Arnaud2010readonly.pdf"><span class='title'>Read-Only Execution for Dynamic
+  Languages</span></a>.
+In <em>Tools Europe</em>. Springer Verlag,
+June 2010.
+DOI:&nbsp;<a href='http://dx.doi.org/10.1007/978-3-642-13953-6_7'><code>10.1007/978-3-642-13953-6_7</code></a>.
+(<a href='http://hal.inria.fr/inria-00498377/'>HAL</a>)
+<span class='notes'>Acceptance: 16/57=28%</span></li>
+
+</ul>;
+@"/research/{;{	;""<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - Research</title>
+    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      <p>Since October 2009, I&#8217;m  PhD student at INRIA Lille in the RMod team¬†direct by Stephane Ducasse. The goal of RMoD is to support remodularization of object-oriented applications. This objective is tackled from two complementary perspectives: reengineering and modularity constructs for programming languages.</p>
+
+<h2 id="scientific-interest">Scientific Interest</h2>
+<ul>
+  <li>Language design</li>
+  <li>Security</li>
+  <li>Reflective programming / Reflection</li>
+  <li>Dynamic languages</li>
+</ul>
+
+<h2 id="phd-topic">Phd Topic</h2>
+<p>Ensure: reconciling reflection and security
+Keywords : dynamic languages, reflective programming, open-system, security, capabilities, language design, virtual machine Scientific context.</p>
+
+<p>More and more applications require dynamic behavior, often based on the possibility to modify the execution itself. Such changes of behavior are often based on reflective features. Dynamic scripting-like languages get more and more presence: Languages like Lua gets embedded in Adobe Photoshop, F-Script can be embedded in any Cocoa Mac OS X applications and take control of the applications without any control, Javascript applications share the same execution environment in a web-browser, so malicious ads could easily access private data. In languages such as Ruby, Python, Smalltalk, it is possible to nearly change any aspect of an applications: load untrusted code, change objects‚Ä¶ which is clearly a total lack of security. There are some approaches to control code execution but this is often based on a closed world assumption, limited to resources control or a minimal subset of Java bytecode.  The goal of this PhD is to study how it is possible to reconcile dynamic and reflective languages with secure applications. The idea is not to validate bytecodes as this is often done but to evaluate how by construction and control of reflective features it is possible to control and create sandbox for programs execution.</p>
+
+    </div>
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
+		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>
+;"Ω<p>Since October 2009, I&#8217;m  PhD student at INRIA Lille in the RMod team¬†direct by Stephane Ducasse. The goal of RMoD is to support remodularization of object-oriented applications. This objective is tackled from two complementary perspectives: reengineering and modularity constructs for programming languages.</p>
+
+<h2 id="scientific-interest">Scientific Interest</h2>
+<ul>
+  <li>Language design</li>
+  <li>Security</li>
+  <li>Reflective programming / Reflection</li>
+  <li>Dynamic languages</li>
+</ul>
+
+<h2 id="phd-topic">Phd Topic</h2>
+<p>Ensure: reconciling reflection and security
+Keywords : dynamic languages, reflective programming, open-system, security, capabilities, language design, virtual machine Scientific context.</p>
+
+<p>More and more applications require dynamic behavior, often based on the possibility to modify the execution itself. Such changes of behavior are often based on reflective features. Dynamic scripting-like languages get more and more presence: Languages like Lua gets embedded in Adobe Photoshop, F-Script can be embedded in any Cocoa Mac OS X applications and take control of the applications without any control, Javascript applications share the same execution environment in a web-browser, so malicious ads could easily access private data. In languages such as Ruby, Python, Smalltalk, it is possible to nearly change any aspect of an applications: load untrusted code, change objects‚Ä¶ which is clearly a total lack of security. There are some approaches to control code execution but this is often based on a closed world assumption, limited to resources control or a minimal subset of Java bytecode.  The goal of this PhD is to study how it is possible to reconcile dynamic and reflective languages with secure applications. The idea is not to validate bytecodes as this is often done but to evaluate how by construction and control of reflective features it is possible to control and create sandbox for programs execution.</p>
+;	"<Since October 2009, I'm  PhD student at INRIA Lille in the RMod team¬†direct by Stephane Ducasse. The goal of RMoD is to support remodularization of object-oriented applications. This objective is tackled from two complementary perspectives: reengineering and modularity constructs for programming languages.
+
+##Scientific Interest
++ Language design
++ Security
++ Reflective programming / Reflection
++ Dynamic languages
+
+##Phd Topic
+Ensure: reconciling reflection and security
+Keywords : dynamic languages, reflective programming, open-system, security, capabilities, language design, virtual machine Scientific context.
+
+More and more applications require dynamic behavior, often based on the possibility to modify the execution itself. Such changes of behavior are often based on reflective features. Dynamic scripting-like languages get more and more presence: Languages like Lua gets embedded in Adobe Photoshop, F-Script can be embedded in any Cocoa Mac OS X applications and take control of the applications without any control, Javascript applications share the same execution environment in a web-browser, so malicious ads could easily access private data. In languages such as Ruby, Python, Smalltalk, it is possible to nearly change any aspect of an applications: load untrusted code, change objects‚Ä¶ which is clearly a total lack of security. There are some approaches to control code execution but this is often based on a closed world assumption, limited to resources control or a minimal subset of Java bytecode.  The goal of this PhD is to study how it is possible to reconcile dynamic and reflective languages with secure applications. The idea is not to validate bytecodes as this is often done but to evaluate how by construction and control of reflective features it is possible to control and create sandbox for programs execution.;
+@"
+/phd/{;{	;"d:<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - Research</title>
+    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      <p>From October 2009 to March 2013, I was PhD student at INRIA Lille in the RMod team¬†direct by Stephane Ducasse. The goal of RMoD is to support remodularization of object-oriented applications. This objective is tackled from two complementary perspectives: reengineering and modularity constructs for programming languages.</p>
+
+<p>I defended my Ph.D the 18th february 2013, at IRCICA.</p>
+
+<h2 id="phd-topic">Phd Topic</h2>
+<p>Ensure: reconciling reflection and security
+Keywords : dynamic languages, reflective programming, open-system, security, capabilities, language design, virtual machine Scientific context.</p>
+
+<p>More and more applications require dynamic behavior, often based on the possibility to modify the execution itself. Such changes of behavior are often based on reflective features. Dynamic scripting-like languages get more and more presence: Languages like Lua gets embedded in Adobe Photoshop, F-Script can be embedded in any Cocoa Mac OS X applications and take control of the applications without any control, Javascript applications share the same execution environment in a web-browser, so malicious ads could easily access private data. In languages such as Ruby, Python, Smalltalk, it is possible to nearly change any aspect of an applications: load untrusted code, change objects‚Ä¶ which is clearly a total lack of security. There are some approaches to control code execution but this is often based on a closed world assumption, limited to resources control or a minimal subset of Java bytecode.  The goal of this PhD is to study how it is possible to reconcile dynamic and reflective languages with secure applications. The idea is not to validate bytecodes as this is often done but to evaluate how by construction and control of reflective features it is possible to control and create sandbox for programs execution.</p>
+
+<h2 id="title">Title</h2>
+<p>Towards First Class References as a Security Infrastructure in Dynamically-Typed Languages</p>
+
+<h2 id="resume">Resume</h2>
+<p>Dynamically-typed object-oriented programming languages do not provide type information until runtime. Two of their main advantages are that they allow fast prototyping and integrating changes at runtime. The ability of dynamically-typed languages to support program changes at runtime and the lack of type information doom the classic security approaches to failure. Controlling references to single objects and to graphs of objects is essential to build secure systems. Existing approaches are commonly based on static type system and cannot be applied to dynamically-typed languages.
+This thesis argue that:
+In the context of dynamically-typed languages, reifying references, controlling behavior, and isolating state via such references, is a practical way to control references.
+This thesis makes five contributions:
++ We propose dynamic read-only objects (DRO) as one kind of adaptation of behavioral change at
+reference-level.
++ We generalize the DRO model to enable more generic behavioral changes. We extend the Pharo programming environment and language with Handles, that are first-class references with the ability to change the behavior of referenced objects.
++ We define Metahandle to offer flexibility and adaptability to controlled references.
++ We propose SHandle, an extension of the Handle model to isolate side effects at the level of references. - And finally, we formalize the Handles and SHandle models to represent and explain their semantics.</p>
+
+<p>As validation of our thesis we have implemented three approaches relevant to securing system using our model. In addition, as proof of concept we extended the Pharo virtual machine to support Handles, Metahandles and SHandles.
+Keyword: security, dynamically-typed languages, reflection, language design, first class reference, object- oriented programming.</p>
+
+<h3 id="scientific-challenges">scientific challenges</h3>
+<p>Dynamically-typed programming languages do not provide type information until run-time.The ability of dynamically-typed languages to support program changes at runtime and the lack of type information until runtime are also their biggest weaknesses. These weaknesses doom static analysis to failure. Analyzing an application statically means ex- amining the code to extract an understanding without executing it. Static analysis is principally used to ensure that the code structure respects a specific standard of quality and security.</p>
+
+<p>In a context where an application can change at runtime, the system developers must ensure that the application cannot trigger undesirable behavior such that harming the system and collecting private information. The most commonly used way to prevent undesirable behavior is to severely limit the expressivity of the programming language. However, what is really needed is only to limit the impacts the application can have on the rest of the system.</p>
+
+<p>Our solution focuses on the problem of controlling references.</p>
+
+<h3 id="solution">Solution</h3>
+<p>Our solution is the Handle a reification reference as special object. Handles are first-class references that propagate behavioral changes dynamically to the object subgraph during program execution. In addition Handle are allow to keep the state change of the accessed object. For more information please refer to my thesis.</p>
+
+<h2 id="applications">Applications</h2>
+<p>We validate our solution by implementing three approaches representing security or safety features commonly used. </p>
+
+<h3 id="transactional-memory">Transactional memory</h3>
+<p>Concurrent programming is control simultaneous execution of multiple interacting computations. The objective is to improve the use of available hardware resources more efficiently. In some domains such as distributed systems, concurrency control is mandatory.
+Software Transactional Memory (STM) is a modern paradigm, based on transaction synchronization, which takes a different approach from conventional approaches such as mutual exclusion and message passing; software transactional memory, is seen by some as a more user-friendly approach to synchronization.</p>
+
+<p>Software transactional memory provides high-level mechanisms to control mutual exclusion, based on the concept of atomic block used to encapsulate execution. The transaction begins when entering in an atomic block and finishes when leaving it.</p>
+
+<p>Software transactional memory ensures that the change introduced by the computation will be fully performed or not at all. there exist several kinds of STM systems, defining different semantics for the atomic block, and also different interaction between normal computation and transactional computation.</p>
+
+<h3 id="revocable-reference">Revocable Reference</h3>
+<p>This approach defines specific references that can be revoked when the owner considers they should not be shared anymore.</p>
+
+<p><img src="../ressources/phd/ChallengeBobAndCarolV3.png" alt="ChallengeBobAndCarolV3" id="revocable" /></p>
+
+<p>The previous figures shows an example with three objects: Alice can give Bob a reference to Doc. But Alice should be able to revoke it later. Bob cannot access it anymore even if he holds a reference to it. The conceptual solution proposed by Miller is to create a revoking facet (R) and pass it to Bob. Such a facet can be seen as an object with a restricted interface or a first-class reference. Note that in this original proposal revocable references are not propagated automatically. The facet needs to be carefully thought to not leak references and only return facets instead.</p>
+
+<p>In the example, Alice has to make sure to wrap all objects discoverable from the reference handed to Bob. Idioms and special safety patterns should be followed by the programmer to make sure that there is no reference leaked by accident. Indeed, imagine that Doc holds a reference to a SubDoc which also has a back pointer to Doc. While Bob cannot access Doc once its reference to Doc is revoked, if Bob gets a reference to SubDoc and this reference is not a revocable one then Bob broke the system and can access Doc even if it should not be able to do so. </p>
+
+<h3 id="read-only">Read-Only</h3>
+
+<p>Mechanisms prohibiting variable mutation are now common in programming languages.
+Java can declare a field as final, and C# has the readonly keyword. The two keywords prevent the fields from being modified by something else than the constructor. C and C++ have the const keyword: a value declared as const can not be changed by any part of the program in any way.</p>
+
+<p>In dynamically-typed languages, few attempts have been made to prohibit variable mutation. One such attempt is immutability, a property embedded in the object itself that define once created the object cannot be modified via any alias.</p>
+
+<p>Our solution to prohibit variable mutation is read-only execution per reference. This form of read-only execution ensures the side-effect free evaluation of code. Read-only execution is often needed when objects taking part in the read-only execution are at the same time (e.g., from another thread of execution) referenced normally with the ability to do side-effects. A clear illustration of this need is assertion execution: within the scope of an assert constraint, objects (reachable from the assertion expressions) should not be modified, else this might lead to subtle bugs depending on whether or not assertions are evaluated.</p>
+
+<h3 id="benchmark">Benchmark</h3>
+<p>The current solution is based on VM modification and have a slowdown of 8%. Handles require to modify and control message sends. Therefore overhead in message sends will induce a cost for all computation. Cost of handle execution. In addition to the general slowdown of the VM, we are especially interested in the overhead of actually using handles in a program. It is clear that the slowdown depends on the behavior that the handles introduce as well as how the handles are used. The slowdown will therefore be different for the kind of handle used (e.g., revocable references, read-only) and in addition will depend on the scenario of actual use.</p>
+
+<h2 id="additional-results">Additional results</h2>
+<p>During my thesis I aquired some interresting skills and knowledges.</p>
+
+<h3 id="vm-internals">VM internals</h3>
+<p>During my Phd, I have acquired extensive knowledge about virtual machine infrastructure. My solution is based on reyfing reference as object and extend all the virtual machine infrastructure to allow behavior and state change from the reference point of view.
+To make the solution viable, I needed to learn message passing mechanism, object representation (and of course all special case).</p>
+
+<h3 id="formal-semantics">Formal semantics</h3>
+<p>As the problematic and the solution presented in my Phd is relativaly complex, I write a formal semantic to describe the impact of my solution on the language itself.</p>
+
+<h3 id="paper-writing">Paper writing</h3>
+<p>In addition I learn the basic of scientific writing. During my Phd, I publish one paper in international conference (TOOL&#8217;s 2009 rank B), and a Paper is under minor revision in a Journal (SCICO rank A). A poster was also presented at GDR/GPL 2011.
+For more information go into the publication section.</p>
+
+<h2 id="ressources">Ressources</h2>
+<p>File: <a href="../ressources/phd/PhD-2013-Arnaud.pdf">pdf</a>, <a href="../ressources/phd/slides.pdf">slides</a>, <a href="../ressources/phd/phd.bib">bib</a><br />
+Sources: Todo</p>
+
+    </div>
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
+		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>
+;"ˇ,<p>From October 2009 to March 2013, I was PhD student at INRIA Lille in the RMod team¬†direct by Stephane Ducasse. The goal of RMoD is to support remodularization of object-oriented applications. This objective is tackled from two complementary perspectives: reengineering and modularity constructs for programming languages.</p>
+
+<p>I defended my Ph.D the 18th february 2013, at IRCICA.</p>
+
+<h2 id="phd-topic">Phd Topic</h2>
+<p>Ensure: reconciling reflection and security
+Keywords : dynamic languages, reflective programming, open-system, security, capabilities, language design, virtual machine Scientific context.</p>
+
+<p>More and more applications require dynamic behavior, often based on the possibility to modify the execution itself. Such changes of behavior are often based on reflective features. Dynamic scripting-like languages get more and more presence: Languages like Lua gets embedded in Adobe Photoshop, F-Script can be embedded in any Cocoa Mac OS X applications and take control of the applications without any control, Javascript applications share the same execution environment in a web-browser, so malicious ads could easily access private data. In languages such as Ruby, Python, Smalltalk, it is possible to nearly change any aspect of an applications: load untrusted code, change objects‚Ä¶ which is clearly a total lack of security. There are some approaches to control code execution but this is often based on a closed world assumption, limited to resources control or a minimal subset of Java bytecode.  The goal of this PhD is to study how it is possible to reconcile dynamic and reflective languages with secure applications. The idea is not to validate bytecodes as this is often done but to evaluate how by construction and control of reflective features it is possible to control and create sandbox for programs execution.</p>
+
+<h2 id="title">Title</h2>
+<p>Towards First Class References as a Security Infrastructure in Dynamically-Typed Languages</p>
+
+<h2 id="resume">Resume</h2>
+<p>Dynamically-typed object-oriented programming languages do not provide type information until runtime. Two of their main advantages are that they allow fast prototyping and integrating changes at runtime. The ability of dynamically-typed languages to support program changes at runtime and the lack of type information doom the classic security approaches to failure. Controlling references to single objects and to graphs of objects is essential to build secure systems. Existing approaches are commonly based on static type system and cannot be applied to dynamically-typed languages.
+This thesis argue that:
+In the context of dynamically-typed languages, reifying references, controlling behavior, and isolating state via such references, is a practical way to control references.
+This thesis makes five contributions:
++ We propose dynamic read-only objects (DRO) as one kind of adaptation of behavioral change at
+reference-level.
++ We generalize the DRO model to enable more generic behavioral changes. We extend the Pharo programming environment and language with Handles, that are first-class references with the ability to change the behavior of referenced objects.
++ We define Metahandle to offer flexibility and adaptability to controlled references.
++ We propose SHandle, an extension of the Handle model to isolate side effects at the level of references. - And finally, we formalize the Handles and SHandle models to represent and explain their semantics.</p>
+
+<p>As validation of our thesis we have implemented three approaches relevant to securing system using our model. In addition, as proof of concept we extended the Pharo virtual machine to support Handles, Metahandles and SHandles.
+Keyword: security, dynamically-typed languages, reflection, language design, first class reference, object- oriented programming.</p>
+
+<h3 id="scientific-challenges">scientific challenges</h3>
+<p>Dynamically-typed programming languages do not provide type information until run-time.The ability of dynamically-typed languages to support program changes at runtime and the lack of type information until runtime are also their biggest weaknesses. These weaknesses doom static analysis to failure. Analyzing an application statically means ex- amining the code to extract an understanding without executing it. Static analysis is principally used to ensure that the code structure respects a specific standard of quality and security.</p>
+
+<p>In a context where an application can change at runtime, the system developers must ensure that the application cannot trigger undesirable behavior such that harming the system and collecting private information. The most commonly used way to prevent undesirable behavior is to severely limit the expressivity of the programming language. However, what is really needed is only to limit the impacts the application can have on the rest of the system.</p>
+
+<p>Our solution focuses on the problem of controlling references.</p>
+
+<h3 id="solution">Solution</h3>
+<p>Our solution is the Handle a reification reference as special object. Handles are first-class references that propagate behavioral changes dynamically to the object subgraph during program execution. In addition Handle are allow to keep the state change of the accessed object. For more information please refer to my thesis.</p>
+
+<h2 id="applications">Applications</h2>
+<p>We validate our solution by implementing three approaches representing security or safety features commonly used. </p>
+
+<h3 id="transactional-memory">Transactional memory</h3>
+<p>Concurrent programming is control simultaneous execution of multiple interacting computations. The objective is to improve the use of available hardware resources more efficiently. In some domains such as distributed systems, concurrency control is mandatory.
+Software Transactional Memory (STM) is a modern paradigm, based on transaction synchronization, which takes a different approach from conventional approaches such as mutual exclusion and message passing; software transactional memory, is seen by some as a more user-friendly approach to synchronization.</p>
+
+<p>Software transactional memory provides high-level mechanisms to control mutual exclusion, based on the concept of atomic block used to encapsulate execution. The transaction begins when entering in an atomic block and finishes when leaving it.</p>
+
+<p>Software transactional memory ensures that the change introduced by the computation will be fully performed or not at all. there exist several kinds of STM systems, defining different semantics for the atomic block, and also different interaction between normal computation and transactional computation.</p>
+
+<h3 id="revocable-reference">Revocable Reference</h3>
+<p>This approach defines specific references that can be revoked when the owner considers they should not be shared anymore.</p>
+
+<p><img src="../ressources/phd/ChallengeBobAndCarolV3.png" alt="ChallengeBobAndCarolV3" id="revocable" /></p>
+
+<p>The previous figures shows an example with three objects: Alice can give Bob a reference to Doc. But Alice should be able to revoke it later. Bob cannot access it anymore even if he holds a reference to it. The conceptual solution proposed by Miller is to create a revoking facet (R) and pass it to Bob. Such a facet can be seen as an object with a restricted interface or a first-class reference. Note that in this original proposal revocable references are not propagated automatically. The facet needs to be carefully thought to not leak references and only return facets instead.</p>
+
+<p>In the example, Alice has to make sure to wrap all objects discoverable from the reference handed to Bob. Idioms and special safety patterns should be followed by the programmer to make sure that there is no reference leaked by accident. Indeed, imagine that Doc holds a reference to a SubDoc which also has a back pointer to Doc. While Bob cannot access Doc once its reference to Doc is revoked, if Bob gets a reference to SubDoc and this reference is not a revocable one then Bob broke the system and can access Doc even if it should not be able to do so. </p>
+
+<h3 id="read-only">Read-Only</h3>
+
+<p>Mechanisms prohibiting variable mutation are now common in programming languages.
+Java can declare a field as final, and C# has the readonly keyword. The two keywords prevent the fields from being modified by something else than the constructor. C and C++ have the const keyword: a value declared as const can not be changed by any part of the program in any way.</p>
+
+<p>In dynamically-typed languages, few attempts have been made to prohibit variable mutation. One such attempt is immutability, a property embedded in the object itself that define once created the object cannot be modified via any alias.</p>
+
+<p>Our solution to prohibit variable mutation is read-only execution per reference. This form of read-only execution ensures the side-effect free evaluation of code. Read-only execution is often needed when objects taking part in the read-only execution are at the same time (e.g., from another thread of execution) referenced normally with the ability to do side-effects. A clear illustration of this need is assertion execution: within the scope of an assert constraint, objects (reachable from the assertion expressions) should not be modified, else this might lead to subtle bugs depending on whether or not assertions are evaluated.</p>
+
+<h3 id="benchmark">Benchmark</h3>
+<p>The current solution is based on VM modification and have a slowdown of 8%. Handles require to modify and control message sends. Therefore overhead in message sends will induce a cost for all computation. Cost of handle execution. In addition to the general slowdown of the VM, we are especially interested in the overhead of actually using handles in a program. It is clear that the slowdown depends on the behavior that the handles introduce as well as how the handles are used. The slowdown will therefore be different for the kind of handle used (e.g., revocable references, read-only) and in addition will depend on the scenario of actual use.</p>
+
+<h2 id="additional-results">Additional results</h2>
+<p>During my thesis I aquired some interresting skills and knowledges.</p>
+
+<h3 id="vm-internals">VM internals</h3>
+<p>During my Phd, I have acquired extensive knowledge about virtual machine infrastructure. My solution is based on reyfing reference as object and extend all the virtual machine infrastructure to allow behavior and state change from the reference point of view.
+To make the solution viable, I needed to learn message passing mechanism, object representation (and of course all special case).</p>
+
+<h3 id="formal-semantics">Formal semantics</h3>
+<p>As the problematic and the solution presented in my Phd is relativaly complex, I write a formal semantic to describe the impact of my solution on the language itself.</p>
+
+<h3 id="paper-writing">Paper writing</h3>
+<p>In addition I learn the basic of scientific writing. During my Phd, I publish one paper in international conference (TOOL&#8217;s 2009 rank B), and a Paper is under minor revision in a Journal (SCICO rank A). A poster was also presented at GDR/GPL 2011.
+For more information go into the publication section.</p>
+
+<h2 id="ressources">Ressources</h2>
+<p>File: <a href="../ressources/phd/PhD-2013-Arnaud.pdf">pdf</a>, <a href="../ressources/phd/slides.pdf">slides</a>, <a href="../ressources/phd/phd.bib">bib</a><br />
+Sources: Todo</p>
+;	"ö*From October 2009 to March 2013, I was PhD student at INRIA Lille in the RMod team¬†direct by Stephane Ducasse. The goal of RMoD is to support remodularization of object-oriented applications. This objective is tackled from two complementary perspectives: reengineering and modularity constructs for programming languages.
+
+I defended my Ph.D the 18th february 2013, at IRCICA.
+
+## Phd Topic
+Ensure: reconciling reflection and security
+Keywords : dynamic languages, reflective programming, open-system, security, capabilities, language design, virtual machine Scientific context.
+
+More and more applications require dynamic behavior, often based on the possibility to modify the execution itself. Such changes of behavior are often based on reflective features. Dynamic scripting-like languages get more and more presence: Languages like Lua gets embedded in Adobe Photoshop, F-Script can be embedded in any Cocoa Mac OS X applications and take control of the applications without any control, Javascript applications share the same execution environment in a web-browser, so malicious ads could easily access private data. In languages such as Ruby, Python, Smalltalk, it is possible to nearly change any aspect of an applications: load untrusted code, change objects‚Ä¶ which is clearly a total lack of security. There are some approaches to control code execution but this is often based on a closed world assumption, limited to resources control or a minimal subset of Java bytecode.  The goal of this PhD is to study how it is possible to reconcile dynamic and reflective languages with secure applications. The idea is not to validate bytecodes as this is often done but to evaluate how by construction and control of reflective features it is possible to control and create sandbox for programs execution.
+
+## Title
+Towards First Class References as a Security Infrastructure in Dynamically-Typed Languages
+
+## Resume
+Dynamically-typed object-oriented programming languages do not provide type information until runtime. Two of their main advantages are that they allow fast prototyping and integrating changes at runtime. The ability of dynamically-typed languages to support program changes at runtime and the lack of type information doom the classic security approaches to failure. Controlling references to single objects and to graphs of objects is essential to build secure systems. Existing approaches are commonly based on static type system and cannot be applied to dynamically-typed languages.
+This thesis argue that:
+In the context of dynamically-typed languages, reifying references, controlling behavior, and isolating state via such references, is a practical way to control references.
+This thesis makes five contributions:
++ We propose dynamic read-only objects (DRO) as one kind of adaptation of behavioral change at
+reference-level.
++ We generalize the DRO model to enable more generic behavioral changes. We extend the Pharo programming environment and language with Handles, that are first-class references with the ability to change the behavior of referenced objects.
++ We define Metahandle to offer flexibility and adaptability to controlled references.
++ We propose SHandle, an extension of the Handle model to isolate side effects at the level of references. - And finally, we formalize the Handles and SHandle models to represent and explain their semantics.
+
+As validation of our thesis we have implemented three approaches relevant to securing system using our model. In addition, as proof of concept we extended the Pharo virtual machine to support Handles, Metahandles and SHandles.
+Keyword: security, dynamically-typed languages, reflection, language design, first class reference, object- oriented programming.
+
+### scientific challenges
+Dynamically-typed programming languages do not provide type information until run-time.The ability of dynamically-typed languages to support program changes at runtime and the lack of type information until runtime are also their biggest weaknesses. These weaknesses doom static analysis to failure. Analyzing an application statically means ex- amining the code to extract an understanding without executing it. Static analysis is principally used to ensure that the code structure respects a specific standard of quality and security.
+
+In a context where an application can change at runtime, the system developers must ensure that the application cannot trigger undesirable behavior such that harming the system and collecting private information. The most commonly used way to prevent undesirable behavior is to severely limit the expressivity of the programming language. However, what is really needed is only to limit the impacts the application can have on the rest of the system.
+
+Our solution focuses on the problem of controlling references.
+
+### Solution
+Our solution is the Handle a reification reference as special object. Handles are first-class references that propagate behavioral changes dynamically to the object subgraph during program execution. In addition Handle are allow to keep the state change of the accessed object. For more information please refer to my thesis.
+
+## Applications
+We validate our solution by implementing three approaches representing security or safety features commonly used. 
+
+### Transactional memory
+Concurrent programming is control simultaneous execution of multiple interacting computations. The objective is to improve the use of available hardware resources more efficiently. In some domains such as distributed systems, concurrency control is mandatory.
+Software Transactional Memory (STM) is a modern paradigm, based on transaction synchronization, which takes a different approach from conventional approaches such as mutual exclusion and message passing; software transactional memory, is seen by some as a more user-friendly approach to synchronization.
+
+Software transactional memory provides high-level mechanisms to control mutual exclusion, based on the concept of atomic block used to encapsulate execution. The transaction begins when entering in an atomic block and finishes when leaving it.
+
+Software transactional memory ensures that the change introduced by the computation will be fully performed or not at all. there exist several kinds of STM systems, defining different semantics for the atomic block, and also different interaction between normal computation and transactional computation.
+
+### Revocable Reference
+ This approach defines specific references that can be revoked when the owner considers they should not be shared anymore.
+ 
+ ![ChallengeBobAndCarolV3](../ressources/phd/ChallengeBobAndCarolV3.png){:#revocable}
+
+The previous figures shows an example with three objects: Alice can give Bob a reference to Doc. But Alice should be able to revoke it later. Bob cannot access it anymore even if he holds a reference to it. The conceptual solution proposed by Miller is to create a revoking facet (R) and pass it to Bob. Such a facet can be seen as an object with a restricted interface or a first-class reference. Note that in this original proposal revocable references are not propagated automatically. The facet needs to be carefully thought to not leak references and only return facets instead.
+
+In the example, Alice has to make sure to wrap all objects discoverable from the reference handed to Bob. Idioms and special safety patterns should be followed by the programmer to make sure that there is no reference leaked by accident. Indeed, imagine that Doc holds a reference to a SubDoc which also has a back pointer to Doc. While Bob cannot access Doc once its reference to Doc is revoked, if Bob gets a reference to SubDoc and this reference is not a revocable one then Bob broke the system and can access Doc even if it should not be able to do so. 
+
+### Read-Only
+
+Mechanisms prohibiting variable mutation are now common in programming languages.
+Java can declare a field as final, and C# has the readonly keyword. The two keywords prevent the fields from being modified by something else than the constructor. C and C++ have the const keyword: a value declared as const can not be changed by any part of the program in any way.
+
+In dynamically-typed languages, few attempts have been made to prohibit variable mutation. One such attempt is immutability, a property embedded in the object itself that define once created the object cannot be modified via any alias.
+
+Our solution to prohibit variable mutation is read-only execution per reference. This form of read-only execution ensures the side-effect free evaluation of code. Read-only execution is often needed when objects taking part in the read-only execution are at the same time (e.g., from another thread of execution) referenced normally with the ability to do side-effects. A clear illustration of this need is assertion execution: within the scope of an assert constraint, objects (reachable from the assertion expressions) should not be modified, else this might lead to subtle bugs depending on whether or not assertions are evaluated.
+
+
+### Benchmark
+The current solution is based on VM modification and have a slowdown of 8%. Handles require to modify and control message sends. Therefore overhead in message sends will induce a cost for all computation. Cost of handle execution. In addition to the general slowdown of the VM, we are especially interested in the overhead of actually using handles in a program. It is clear that the slowdown depends on the behavior that the handles introduce as well as how the handles are used. The slowdown will therefore be different for the kind of handle used (e.g., revocable references, read-only) and in addition will depend on the scenario of actual use.
+
+## Additional results
+During my thesis I aquired some interresting skills and knowledges.
+
+### VM internals
+During my Phd, I have acquired extensive knowledge about virtual machine infrastructure. My solution is based on reyfing reference as object and extend all the virtual machine infrastructure to allow behavior and state change from the reference point of view.
+To make the solution viable, I needed to learn message passing mechanism, object representation (and of course all special case).
+
+### Formal semantics
+As the problematic and the solution presented in my Phd is relativaly complex, I write a formal semantic to describe the impact of my solution on the language itself.
+
+###Paper writing
+In addition I learn the basic of scientific writing. During my Phd, I publish one paper in international conference (TOOL's 2009 rank B), and a Paper is under minor revision in a Journal (SCICO rank A). A poster was also presented at GDR/GPL 2011.
+For more information go into the publication section.
+
+## Ressources
+File: [pdf](../ressources/phd/PhD-2013-Arnaud.pdf), [slides](../ressources/phd/slides.pdf), [bib](../ressources/phd/phd.bib)  
+Sources: Todo;
+@""/software/{;{	;"Î<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - Software</title>
+    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="handle">Handle</h1>
+<p>Handles are transparent proxies that are undetectable by the programmer: a handle and the object it controls have the same identity. A handle hijacks the identity of the object it represents. In addition a handle specifies specific behavior (read-only, revocation, limited interface, &#8230;) that replaces its target object behavior. This means that when a target receives a message via a handle reference, the behavior of the handle will be executed in place of the behavior of the target object.</p>
+
+<p>For execute the implementation you need to have a modified virtual machine that can be find <a href="../Handle Virtual Machine/">here</a>.
+And a Pharo image ready to use can be download from the <a href="https://pharo-ic.lille.inria.fr/hudson/job/Handles/">Pharo hudson server</a>. </p>
+
+<h1 id="opal-compiler">Opal Compiler</h1>
+
+<p>The OpalCompiler is a Smalltalk-to-Bytecode compiler for Pharo. Originaly it was named NewCompile.</p>
+
+<ul>
+  <li>Support for full block closures.</li>
+  <li>Easy to understand and modify.</li>
+  <li>Based on the AST of the Refactoring Engine.</li>
+  <li>Retargable Backend</li>
+</ul>
+
+    </div>
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
+		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>
+;"Ü<h1 id="handle">Handle</h1>
+<p>Handles are transparent proxies that are undetectable by the programmer: a handle and the object it controls have the same identity. A handle hijacks the identity of the object it represents. In addition a handle specifies specific behavior (read-only, revocation, limited interface, &#8230;) that replaces its target object behavior. This means that when a target receives a message via a handle reference, the behavior of the handle will be executed in place of the behavior of the target object.</p>
+
+<p>For execute the implementation you need to have a modified virtual machine that can be find <a href="../Handle Virtual Machine/">here</a>.
+And a Pharo image ready to use can be download from the <a href="https://pharo-ic.lille.inria.fr/hudson/job/Handles/">Pharo hudson server</a>. </p>
+
+<h1 id="opal-compiler">Opal Compiler</h1>
+
+<p>The OpalCompiler is a Smalltalk-to-Bytecode compiler for Pharo. Originaly it was named NewCompile.</p>
+
+<ul>
+  <li>Support for full block closures.</li>
+  <li>Easy to understand and modify.</li>
+  <li>Based on the AST of the Refactoring Engine.</li>
+  <li>Retargable Backend</li>
+</ul>
+;	"¯#Handle
+Handles are transparent proxies that are undetectable by the programmer: a handle and the object it controls have the same identity. A handle hijacks the identity of the object it represents. In addition a handle specifies specific behavior (read-only, revocation, limited interface, ...) that replaces its target object behavior. This means that when a target receives a message via a handle reference, the behavior of the handle will be executed in place of the behavior of the target object.
+
+For execute the implementation you need to have a modified virtual machine that can be find [here](../Handle Virtual Machine/).
+And a Pharo image ready to use can be download from the [Pharo hudson server](https://pharo-ic.lille.inria.fr/hudson/job/Handles/). 
+
+#Opal Compiler
+
+The OpalCompiler is a Smalltalk-to-Bytecode compiler for Pharo. Originaly it was named NewCompile.
+
++ Support for full block closures.
++ Easy to understand and modify.
++ Based on the AST of the Refactoring Engine.
++ Retargable Backend;
+@("/handles/{;{	;"&<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - Handles</title>
+    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="handle">Handle</h1>
+<p>Only for mac (let me time to fix my project on Jenkins):<a href="../ressources/CautionExperimentalHandleVM.zip">VMMac</a></p>
+
+<p>Cleanup soon:<a href="https://ci.lille.inria.fr/pharo/job/HandleImages/lastSuccessfulBuild/artifact/Handle.zip">LinkToImage</a></p>
+
+<p>A handle is a transparent reference to a target object.
+(1) A handle can define different behavior than the target object. When the message foo is sent via the reference the handle executes its own methods using the identity and the state of the target object. If a method is not defined in the handle, but in the target, it will not be accessible to the handle client. Multiple handles can have the same target object. A target still can be accessible via a normal reference. It is the responsibility of the infrastructure built on top of handles to ensure the adequate use of properties and references. In its current version, the Handle framework does not keep the target class and its shadow synchronized automatically.</p>
+
+<p><img src="../figures/NewHandlePrinciple.jpg" alt="Handle principle" title="Handle principle" /></p>
+
+<p>(2) A handle can &#8216;guard&#8217; the state of the target object, a handle can have different state than the target object. If a method try to access or change the state thought the handle, it will remains local to the handle. Obviously again, a target still can be accessible via a normal reference.</p>
+
+<p><img src="../figures/StateGuarding1.jpg" alt="State guarding" title="State guarding principle" /></p>
+
+<p>(3) One of the key aspect of the handle is the automatic propagation of the Properties. The Handle is used for define properties, such Readonly,etc.. If you define a way to automatically propagate this property(basically how to configure the handle), it will be applied automatically when the object of the subgraph will access.</p>
+
+<p><img src="../figures/newPropagationV2.jpg" alt="Propagation" title="Propagation principle" /></p>
+
+    </div>
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
+		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>
+;"¬<h1 id="handle">Handle</h1>
+<p>Only for mac (let me time to fix my project on Jenkins):<a href="../ressources/CautionExperimentalHandleVM.zip">VMMac</a></p>
+
+<p>Cleanup soon:<a href="https://ci.lille.inria.fr/pharo/job/HandleImages/lastSuccessfulBuild/artifact/Handle.zip">LinkToImage</a></p>
+
+<p>A handle is a transparent reference to a target object.
+(1) A handle can define different behavior than the target object. When the message foo is sent via the reference the handle executes its own methods using the identity and the state of the target object. If a method is not defined in the handle, but in the target, it will not be accessible to the handle client. Multiple handles can have the same target object. A target still can be accessible via a normal reference. It is the responsibility of the infrastructure built on top of handles to ensure the adequate use of properties and references. In its current version, the Handle framework does not keep the target class and its shadow synchronized automatically.</p>
+
+<p><img src="../figures/NewHandlePrinciple.jpg" alt="Handle principle" title="Handle principle" /></p>
+
+<p>(2) A handle can &#8216;guard&#8217; the state of the target object, a handle can have different state than the target object. If a method try to access or change the state thought the handle, it will remains local to the handle. Obviously again, a target still can be accessible via a normal reference.</p>
+
+<p><img src="../figures/StateGuarding1.jpg" alt="State guarding" title="State guarding principle" /></p>
+
+<p>(3) One of the key aspect of the handle is the automatic propagation of the Properties. The Handle is used for define properties, such Readonly,etc.. If you define a way to automatically propagate this property(basically how to configure the handle), it will be applied automatically when the object of the subgraph will access.</p>
+
+<p><img src="../figures/newPropagationV2.jpg" alt="Propagation" title="Propagation principle" /></p>
+;	"#Handle
+Only for mac (let me time to fix my project on Jenkins):[VMMac](../ressources/CautionExperimentalHandleVM.zip)
+
+Cleanup soon:[LinkToImage](https://ci.lille.inria.fr/pharo/job/HandleImages/lastSuccessfulBuild/artifact/Handle.zip)
+
+A handle is a transparent reference to a target object.
+(1) A handle can define different behavior than the target object. When the message foo is sent via the reference the handle executes its own methods using the identity and the state of the target object. If a method is not defined in the handle, but in the target, it will not be accessible to the handle client. Multiple handles can have the same target object. A target still can be accessible via a normal reference. It is the responsibility of the infrastructure built on top of handles to ensure the adequate use of properties and references. In its current version, the Handle framework does not keep the target class and its shadow synchronized automatically.
+
+![Handle principle](../figures/NewHandlePrinciple.jpg "Handle principle")
+
+(2) A handle can 'guard' the state of the target object, a handle can have different state than the target object. If a method try to access or change the state thought the handle, it will remains local to the handle. Obviously again, a target still can be accessible via a normal reference.
+
+![State guarding](../figures/StateGuarding1.jpg "State guarding principle")
+
+(3) One of the key aspect of the handle is the automatic propagation of the Properties. The Handle is used for define properties, such Readonly,etc.. If you define a way to automatically propagate this property(basically how to configure the handle), it will be applied automatically when the object of the subgraph will access.
+
+![Propagation](../figures/newPropagationV2.jpg "Propagation principle");
+@."/opengl/{;{	;"h<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - Gameboy Emulator</title>
+    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      <p>I like playing game, moreover I like play old game. So I ask, how can we write a complete gameboy emulator from scratch.
+I really think that is possible and moreover simple to do.</p>
+
+<p><img src="http://ssl10.ovh.net/~jeanbaptg/ressources/gbScreen.jpg" alt="GBImage" /></p>
+
+<h3 id="roadmap">RoadMap</h3>
+<ul>
+  <li>Processor with the 512 bytcode - done </li>
+  <li>Memory - done</li>
+  <li>passing bios execution - done yes jb 1 gameboy 0</li>
+  <li>Basic Cartridge (tetris like ) - done</li>
+  <li>Sync between memory, screen and processo - OMG, done </li>
+  <li>performance issue: fast memory, fast screen done.</li>
+  <li>fixing typo</li>
+  <li>interupt - done</li>
+  <li>debugging need to implement tool using spec todo need found motivation too</li>
+  <li>sound - todo</li>
+  <li>advance cartridge - todo</li>
+  <li>serial - todo</li>
+</ul>
+
+<h3 id="ressources">Ressources:</h3>
+<ul>
+  <li><a href="http://smalltalkhub.com/#!/~jeanbaptistearnaud/GameBoyEmulator">smalltalkhub::GameBoyEmulator</a></li>
+</ul>
+
+    </div>
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
+		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>
+;"˚<p>I like playing game, moreover I like play old game. So I ask, how can we write a complete gameboy emulator from scratch.
+I really think that is possible and moreover simple to do.</p>
+
+<p><img src="http://ssl10.ovh.net/~jeanbaptg/ressources/gbScreen.jpg" alt="GBImage" /></p>
+
+<h3 id="roadmap">RoadMap</h3>
+<ul>
+  <li>Processor with the 512 bytcode - done </li>
+  <li>Memory - done</li>
+  <li>passing bios execution - done yes jb 1 gameboy 0</li>
+  <li>Basic Cartridge (tetris like ) - done</li>
+  <li>Sync between memory, screen and processo - OMG, done </li>
+  <li>performance issue: fast memory, fast screen done.</li>
+  <li>fixing typo</li>
+  <li>interupt - done</li>
+  <li>debugging need to implement tool using spec todo need found motivation too</li>
+  <li>sound - todo</li>
+  <li>advance cartridge - todo</li>
+  <li>serial - todo</li>
+</ul>
+
+<h3 id="ressources">Ressources:</h3>
+<ul>
+  <li><a href="http://smalltalkhub.com/#!/~jeanbaptistearnaud/GameBoyEmulator">smalltalkhub::GameBoyEmulator</a></li>
+</ul>
+;	" I like playing game, moreover I like play old game. So I ask, how can we write a complete gameboy emulator from scratch.
+I really think that is possible and moreover simple to do.
+
+![GBImage](http://ssl10.ovh.net/~jeanbaptg/ressources/gbScreen.jpg)
+
+### RoadMap
++ Processor with the 512 bytcode - done 
++ Memory - done
++ passing bios execution - done yes jb 1 gameboy 0
++ Basic Cartridge (tetris like ) - done
++ Sync between memory, screen and processo - OMG, done 
++ performance issue: fast memory, fast screen done.
++ fixing typo
++ interupt - done
++ debugging need to implement tool using spec todo need found motivation too
++ sound - todo
++ advance cartridge - todo
++ serial - todo
+
+
+### Ressources:
++ [smalltalkhub::GameBoyEmulator](http://smalltalkhub.com/#!/~jeanbaptistearnaud/GameBoyEmulator);
+@4"/contact/{;{	;"≠<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - Contact</title>
+    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      <p><strong>Email</strong>: contact@jeanbaptiste-arnaud.eu</p>
+
+<p><strong>Address</strong>:</p>
+
+<p>Rmod Team ‚Äî INRIA Lille - Nord Europe
+Parc Scientifique de la Haute Borne
+40, avenue Halley
+B√¢t. A, Park Plaza
+59650 Villeneuve d&#8217;Ascq ‚Äî France</p>
+
+<ul>
+  <li><a href="https://github.com/JeanBaptisteArnaud"><img src="../ressources/contact/github.png" alt="Github" id="github" /></a></li>
+  <li><a href="http://fr.linkedin.com/pub/jean-baptiste-arnaud/72/889/515"><img src="../ressources/contact/linkedin.png" alt="linkedIn" id="li" /></a></li>
+  <li><a href="http://smalltalkhub.com/#!/~jeanbaptistearnaud"><img src="../ressources/contact/sthubbeta.png" alt="SmalltalkHub" id="sm" /></a></li>
+  <li><a href="https://www.facebook.com/jean.b.arnaud"><img src="../ressources/contact/fb.png" alt="facebook" id="fb" /></a></li>
+</ul>
+
+    </div>
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
+		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>
+;"I<p><strong>Email</strong>: contact@jeanbaptiste-arnaud.eu</p>
+
+<p><strong>Address</strong>:</p>
+
+<p>Rmod Team ‚Äî INRIA Lille - Nord Europe
+Parc Scientifique de la Haute Borne
+40, avenue Halley
+B√¢t. A, Park Plaza
+59650 Villeneuve d&#8217;Ascq ‚Äî France</p>
+
+<ul>
+  <li><a href="https://github.com/JeanBaptisteArnaud"><img src="../ressources/contact/github.png" alt="Github" id="github" /></a></li>
+  <li><a href="http://fr.linkedin.com/pub/jean-baptiste-arnaud/72/889/515"><img src="../ressources/contact/linkedin.png" alt="linkedIn" id="li" /></a></li>
+  <li><a href="http://smalltalkhub.com/#!/~jeanbaptistearnaud"><img src="../ressources/contact/sthubbeta.png" alt="SmalltalkHub" id="sm" /></a></li>
+  <li><a href="https://www.facebook.com/jean.b.arnaud"><img src="../ressources/contact/fb.png" alt="facebook" id="fb" /></a></li>
+</ul>
+;	"q**Email**: contact@jeanbaptiste-arnaud.eu
+
+**Address**:
+
+Rmod Team ‚Äî INRIA Lille - Nord Europe
+Parc Scientifique de la Haute Borne
+40, avenue Halley
+B√¢t. A, Park Plaza
+59650 Villeneuve d'Ascq ‚Äî France
+
+
++ [![Github](../ressources/contact/github.png){:#github}](https://github.com/JeanBaptisteArnaud)
++ [![linkedIn](../ressources/contact/linkedin.png){:#li}](http://fr.linkedin.com/pub/jean-baptiste-arnaud/72/889/515)
++ [![SmalltalkHub](../ressources/contact/sthubbeta.png){:#sm}](http://smalltalkhub.com/#!/~jeanbaptistearnaud)
++ [![facebook](../ressources/contact/fb.png){:#fb}](https://www.facebook.com/jean.b.arnaud);
+@:"/stylesheet/{;{;"!* {
+  margin: 0;
+  padding: 0;
+
+  font-family: Georgia, Palatino, Times, 'Times New Roman', sans-serif;
+}
+
+body {
+  background: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: blue;
+}
+
+a:hover {
+  color: blue;
+}
+
+#main {
+  position: absolute;
+
+  top: 40px;
+  left: 280px;
+
+  width: 500px;
+}
+
+#main h1 {
+  font-size: 40px;
+  font-weight: normal;
+
+  line-height: 40px;
+
+  letter-spacing: -1px;
+}
+
+#main p {
+  margin: 20px 0;
+  
+  font-size: 15px;
+  
+  line-height: 20px;
+}
+
+#main ul, #main ol {
+  margin: 20px;
+}
+
+#main li {
+  font-size: 15px;
+  
+  line-height: 20px;
+}
+
+#main ul li {
+  list-style-type: square;
+}
+
+#sidebar {
+  position: absolute;
+
+  top: 40px;
+  left: 20px;
+  width: 200px;
+
+  padding: 20px 20px 0 0;
+
+  border-right: 1px solid #ccc;
+
+  text-align: right;
+}
+
+#sidebar h2 {
+  text-transform: uppercase;
+
+  font-size: 13px;
+
+  color: #333;
+
+  letter-spacing: 1px;
+
+  line-height: 20px;
+}
+
+#sidebar ul, #sidebar ol  {
+  list-style-type: none;
+
+  margin: 20px 0;
+}
+
+#sidebar li {
+  font-size: 14px;
+
+  line-height: 20px;
+}
+;	@@;
+@@"	/gb/{;{	;"h<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - Gameboy Emulator</title>
+    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      <p>I like playing game, moreover I like play old game. So I ask, how can we write a complete gameboy emulator from scratch.
+I really think that is possible and moreover simple to do.</p>
+
+<p><img src="http://ssl10.ovh.net/~jeanbaptg/ressources/gbScreen.jpg" alt="GBImage" /></p>
+
+<h3 id="roadmap">RoadMap</h3>
+<ul>
+  <li>Processor with the 512 bytcode - done </li>
+  <li>Memory - done</li>
+  <li>passing bios execution - done yes jb 1 gameboy 0</li>
+  <li>Basic Cartridge (tetris like ) - done</li>
+  <li>Sync between memory, screen and processo - OMG, done </li>
+  <li>performance issue: fast memory, fast screen done.</li>
+  <li>fixing typo</li>
+  <li>interupt - done</li>
+  <li>debugging need to implement tool using spec todo need found motivation too</li>
+  <li>sound - todo</li>
+  <li>advance cartridge - todo</li>
+  <li>serial - todo</li>
+</ul>
+
+<h3 id="ressources">Ressources:</h3>
+<ul>
+  <li><a href="http://smalltalkhub.com/#!/~jeanbaptistearnaud/GameBoyEmulator">smalltalkhub::GameBoyEmulator</a></li>
+</ul>
+
+    </div>
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
+		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>
+;"˚<p>I like playing game, moreover I like play old game. So I ask, how can we write a complete gameboy emulator from scratch.
+I really think that is possible and moreover simple to do.</p>
+
+<p><img src="http://ssl10.ovh.net/~jeanbaptg/ressources/gbScreen.jpg" alt="GBImage" /></p>
+
+<h3 id="roadmap">RoadMap</h3>
+<ul>
+  <li>Processor with the 512 bytcode - done </li>
+  <li>Memory - done</li>
+  <li>passing bios execution - done yes jb 1 gameboy 0</li>
+  <li>Basic Cartridge (tetris like ) - done</li>
+  <li>Sync between memory, screen and processo - OMG, done </li>
+  <li>performance issue: fast memory, fast screen done.</li>
+  <li>fixing typo</li>
+  <li>interupt - done</li>
+  <li>debugging need to implement tool using spec todo need found motivation too</li>
+  <li>sound - todo</li>
+  <li>advance cartridge - todo</li>
+  <li>serial - todo</li>
+</ul>
+
+<h3 id="ressources">Ressources:</h3>
+<ul>
+  <li><a href="http://smalltalkhub.com/#!/~jeanbaptistearnaud/GameBoyEmulator">smalltalkhub::GameBoyEmulator</a></li>
+</ul>
+;	" I like playing game, moreover I like play old game. So I ask, how can we write a complete gameboy emulator from scratch.
+I really think that is possible and moreover simple to do.
+
+![GBImage](http://ssl10.ovh.net/~jeanbaptg/ressources/gbScreen.jpg)
+
+### RoadMap
++ Processor with the 512 bytcode - done 
++ Memory - done
++ passing bios execution - done yes jb 1 gameboy 0
++ Basic Cartridge (tetris like ) - done
++ Sync between memory, screen and processo - OMG, done 
++ performance issue: fast memory, fast screen done.
++ fixing typo
++ interupt - done
++ debugging need to implement tool using spec todo need found motivation too
++ sound - todo
++ advance cartridge - todo
++ serial - todo
+
+
+### Ressources:
++ [smalltalkhub::GameBoyEmulator](http://smalltalkhub.com/#!/~jeanbaptistearnaud/GameBoyEmulator);
+@D"/raspberry/{;{	;"<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - Pharo on Raspberry Pi</title>
+    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      <h1 id="pharo-on-raspberry-pi">Pharo on Raspberry Pi</h1>
+
+<p><em>The <a href="http://www.raspberrypi.org/">Raspberry Pi</a> is a credit-card sized computer that plugs into your TV and a keyboard. It‚Äôs a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video. We want to see it being used by kids all over the world to learn programming</em></p>
+
+<p><img src="http://ssl10.ovh.net/~jeanbaptg/ressources/Screen-Shot-2012-12-24-at-10.59.55-1024x722.png" alt="Rasp Spec" />
+Source: http://www.raspberrypi.org/</p>
+
+<p>The idea is to port the Pharo Virtual Machine on Raspberry Pi. </p>
+
+<h3 id="roadmap">RoadMap</h3>
+<ul>
+  <li>compile StackVM - done </li>
+  <li>Sync with github pharo repository - done</li>
+  <li>do a jenkins job - done</li>
+  <li>merge with github pharo repository - todo</li>
+  <li>introduce fast bltbit change (faster UI) - need work.</li>
+  <li>compile CogVM - need  work</li>
+</ul>
+
+<h3 id="ressources">Ressources:</h3>
+<ul>
+  <li><a href="https://ci.inria.fr/pharo-contribution/view/RaspberryPi/job/RaspberryPi-Publish/">jenkins</a></li>
+</ul>
+
+    </div>
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
+		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>
+;"ù<h1 id="pharo-on-raspberry-pi">Pharo on Raspberry Pi</h1>
+
+<p><em>The <a href="http://www.raspberrypi.org/">Raspberry Pi</a> is a credit-card sized computer that plugs into your TV and a keyboard. It‚Äôs a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video. We want to see it being used by kids all over the world to learn programming</em></p>
+
+<p><img src="http://ssl10.ovh.net/~jeanbaptg/ressources/Screen-Shot-2012-12-24-at-10.59.55-1024x722.png" alt="Rasp Spec" />
+Source: http://www.raspberrypi.org/</p>
+
+<p>The idea is to port the Pharo Virtual Machine on Raspberry Pi. </p>
+
+<h3 id="roadmap">RoadMap</h3>
+<ul>
+  <li>compile StackVM - done </li>
+  <li>Sync with github pharo repository - done</li>
+  <li>do a jenkins job - done</li>
+  <li>merge with github pharo repository - todo</li>
+  <li>introduce fast bltbit change (faster UI) - need work.</li>
+  <li>compile CogVM - need  work</li>
+</ul>
+
+<h3 id="ressources">Ressources:</h3>
+<ul>
+  <li><a href="https://ci.inria.fr/pharo-contribution/view/RaspberryPi/job/RaspberryPi-Publish/">jenkins</a></li>
+</ul>
+;	"º# Pharo on Raspberry Pi
+
+*The [Raspberry Pi](http://www.raspberrypi.org/) is a credit-card sized computer that plugs into your TV and a keyboard. It‚Äôs a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video. We want to see it being used by kids all over the world to learn programming*
+
+![Rasp Spec](http://ssl10.ovh.net/~jeanbaptg/ressources/Screen-Shot-2012-12-24-at-10.59.55-1024x722.png)
+Source: http://www.raspberrypi.org/
+
+The idea is to port the Pharo Virtual Machine on Raspberry Pi. 
+
+### RoadMap
++ compile StackVM - done 
++ Sync with github pharo repository - done
++ do a jenkins job - done
++ merge with github pharo repository - todo
++ introduce fast bltbit change (faster UI) - need work.
++ compile CogVM - need  work
+
+### Ressources:
++ [jenkins](https://ci.inria.fr/pharo-contribution/view/RaspberryPi/job/RaspberryPi-Publish/);
+@J:versioni

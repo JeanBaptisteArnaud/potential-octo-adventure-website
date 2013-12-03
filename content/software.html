@@ -1,0 +1,22 @@
+--- 
+title: Software
+---
+
+#Handle
+Handles are transparent proxies that are undetectable by the programmer: a handle and the object it controls have the same identity. A handle hijacks the identity of the object it represents. In addition a handle specifies specific behavior (read-only, revocation, limited interface, ...) that replaces its target object behavior. This means that when a target receives a message via a handle reference, the behavior of the handle will be executed in place of the behavior of the target object.
+
+For execute the implementation you need to have a modified virtual machine that can be find [here](../Handle Virtual Machine/).
+And a Pharo image ready to use can be download from the [Pharo hudson server](https://pharo-ic.lille.inria.fr/hudson/job/Handles/). 
+
+#Opal Compiler
+
+The OpalCompiler is a Smalltalk-to-Bytecode compiler for Pharo. Originaly it was named NewCompile.
+
++ Support for full block closures.
++ Easy to understand and modify.
++ Based on the AST of the Refactoring Engine.
++ Retargable Backend
+
+
+
+
