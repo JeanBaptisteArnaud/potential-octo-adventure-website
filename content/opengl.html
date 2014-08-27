@@ -1,26 +1,55 @@
 --- 
-title: Gameboy Emulator
+title: OpenGL on Pharo
 ---
 
-I like playing game, moreover I like play old game. So I ask, how can we write a complete gameboy emulator from scratch.
-I really think that is possible and moreover simple to do.
+Since 2012 we have on pharo a really cool binding of OpenGL using NativeBoost (Thanks Igor). As I always want to know "how" these stuffs works, I begin to play with it. And I can tell you it is really easy and fun to learn OpenGL with immediate feedback (do not compile whole project each modification).
 
-![GBImage](http://ssl10.ovh.net/~jeanbaptg/ressources/gbScreen.jpg)
+Link: [Jenkins](https://ci.inria.fr/pharo-contribution/view/NBOpenGL/)
 
-### RoadMap
-+ Processor with the 512 bytcode - done 
-+ Memory - done
-+ passing bios execution - done yes jb 1 gameboy 0
-+ Basic Cartridge (tetris like ) - done
-+ Sync between memory, screen and processo - OMG, done 
-+ performance issue: fast memory, fast screen done.
-+ fixing typo
-+ interupt - done
-+ debugging need to implement tool using spec todo need found motivation too
-+ sound - todo
-+ advance cartridge - todo
-+ serial - todo
+# NBOpenGL
+Learning with Pharo/NativeBoost is awesome, just try and you will see.
+I maintain NBOpenGL for most of the fix, configuration and implementation. In case of trouble, just email me or the mailing list (Pharo Users).
+I you espacially need something from the user point of view, I am glad to have feedback for keeping the direction coherent (as we do that on the freetime, we have restricted ressource to invest).
+
+## Modern OpenGL.
+The main issue is for now most of the application using NBOpenGL used a deprecated method for rendenring. It is simple and faster to prototype using these deprecated primitives, but it have poor performance (due to a lot of communication with the graphical hardware) even if we pre-compile code. Moreover a lot of modern shader technique are not compatible.
+The main issue is the actual Modern OpenGL is _more simple for complex things and more complex for simple things_. And it is complicated to manage from a high level of abstraction. So we decided to developped a layer (now in cooperation with Roassal3D) to simplify the usage of modern OpenGL (such precompile ShaderCode). Making slowly the code more and more efficient and more simple to develop.
+As the knowledge behind are not trivials we also develop a bunch of tutorial.
+
+# Binding for ffmpeg.
+I recently do a simple binding to generate video using ffmpeg and the rendenring tool of OpenGL. It is a little bit raw for now but I will put more energy in it if used.
+Here is the result:
+
+<iframe width="640" height="390" src="//www.youtube.com/embed/rCBDT9DRZiA" frameborder="0" allowfullscreen></iframe>
+
+Time to develop it one day.
+Compatible format for now, mkv and mpeg.
+
+# SourceCity.
+In context of Its internship Erwan Douaille, develop a 3D visualisation (using NBOpenGL of course) representing packages as building. I supervise him (with Igor) for the technical point of view and I maintain a little bit the code in case of emergency.
+
+![sourcecity](../ressources/opengl/SourceCity2.png){:sourceCity}
+
+Link:[SourceCity](http://rmod.lille.inria.fr/web/pier/software/SourceCity)
+
+# Wavefront importer.
+Wavefront is a format of 3D model really simple (human readable).
+I do a simple wawefront importer to import 3D model from blender/3dSmax/other thing and load in Pharo.
+
+![xwing](../ressources/opengl/xwing.png){:xwing}
+
+I simple parse the file and generate object that know how drawing themself. At this step, all polygon kind is correctly manage and most of the material is manage (all except texturing because blender put my ball in a juice maker with theirs _file path management_, so I begin to do a texture resolver for my importer to fix all the path issue but that is boring).
+It is slow because is still used the deprecated way.
+When I develop it I do not used PetitParser but a simple handcraft parser, maybe I should redo it using petitParser.
 
 
-### Ressources:
-+ [smalltalkhub::GameBoyEmulator](http://smalltalkhub.com/#!/~jeanbaptistearnaud/GameBoyEmulator)
+# DDS importer.
+DDS is a kind of texture where everything is self contain in the texture file (all coord, etc.). I so a simple importer for the Modern OpengGL layers. Time to develop it half a day.
+A usage can be found in the Tutorial number 6, in NBOpenGL-Extra.
+
+
+
+
+
+
+

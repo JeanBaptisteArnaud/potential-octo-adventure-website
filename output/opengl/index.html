@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Arnaud Jean Baptiste - Gameboy Emulator</title>
-    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <title>Arnaud Jean Baptiste - OpenGL on Pharo</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
     <meta name="generator" content="nanoc 3.1.8">
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
@@ -40,33 +40,55 @@
   </head>
   <body>
     <div id="main">
-      <p>I like playing game, moreover I like play old game. So I ask, how can we write a complete gameboy emulator from scratch.
-I really think that is possible and moreover simple to do.</p>
+      <p>Since 2012 we have on pharo a really cool binding of OpenGL using NativeBoost (Thanks Igor). As I always want to know “how” these stuffs works, I begin to play with it. And I can tell you it is really easy and fun to learn OpenGL with immediate feedback (do not compile whole project each modification).</p>
 
-<p><img src="http://ssl10.ovh.net/~jeanbaptg/ressources/gbScreen.jpg" alt="GBImage" /></p>
+<p>Link: <a href="https://ci.inria.fr/pharo-contribution/view/NBOpenGL/">Jenkins</a></p>
 
-<h3 id="roadmap">RoadMap</h3>
-<ul>
-  <li>Processor with the 512 bytcode - done </li>
-  <li>Memory - done</li>
-  <li>passing bios execution - done yes jb 1 gameboy 0</li>
-  <li>Basic Cartridge (tetris like ) - done</li>
-  <li>Sync between memory, screen and processo - OMG, done </li>
-  <li>performance issue: fast memory, fast screen done.</li>
-  <li>fixing typo</li>
-  <li>interupt - done</li>
-  <li>debugging need to implement tool using spec todo need found motivation too</li>
-  <li>sound - todo</li>
-  <li>advance cartridge - todo</li>
-  <li>serial - todo</li>
-</ul>
+<h1 id="nbopengl">NBOpenGL</h1>
+<p>Learning with Pharo/NativeBoost is awesome, just try and you will see.
+I maintain NBOpenGL for most of the fix, configuration and implementation. In case of trouble, just email me or the mailing list (Pharo Users).
+I you espacially need something from the user point of view, I am glad to have feedback for keeping the direction coherent (as we do that on the freetime, we have restricted ressource to invest).</p>
 
-<h3 id="ressources">Ressources:</h3>
-<ul>
-  <li><a href="http://smalltalkhub.com/#!/~jeanbaptistearnaud/GameBoyEmulator">smalltalkhub::GameBoyEmulator</a></li>
-</ul>
+<h2 id="modern-opengl">Modern OpenGL.</h2>
+<p>The main issue is for now most of the application using NBOpenGL used a deprecated method for rendenring. It is simple and faster to prototype using these deprecated primitives, but it have poor performance (due to a lot of communication with the graphical hardware) even if we pre-compile code. Moreover a lot of modern shader technique are not compatible.
+The main issue is the actual Modern OpenGL is <em>more simple for complex things and more complex for simple things</em>. And it is complicated to manage from a high level of abstraction. So we decided to developped a layer (now in cooperation with Roassal3D) to simplify the usage of modern OpenGL (such precompile ShaderCode). Making slowly the code more and more efficient and more simple to develop.
+As the knowledge behind are not trivials we also develop a bunch of tutorial.</p>
 
+<h1 id="binding-for-ffmpeg">Binding for ffmpeg.</h1>
+<p>I recently do a simple binding to generate video using ffmpeg and the rendenring tool of OpenGL. It is a little bit raw for now but I will put more energy in it if used.
+Here is the result:</p>
+
+<iframe width="640" height="390" src="//www.youtube.com/embed/rCBDT9DRZiA" frameborder="0" allowfullscreen=""></iframe>
+
+<p>Time to develop it one day.
+Compatible format for now, mkv and mpeg.</p>
+
+<h1 id="sourcecity">SourceCity.</h1>
+<p>In context of Its internship Erwan Douaille, develop a 3D visualisation (using NBOpenGL of course) representing packages as building. I supervise him (with Igor) for the technical point of view and I maintain a little bit the code in case of emergency.</p>
+
+<p><img src="../ressources/opengl/SourceCity2.png" alt="sourcecity"></p>
+
+<p>Link:<a href="http://rmod.lille.inria.fr/web/pier/software/SourceCity">SourceCity</a></p>
+
+<h1 id="wavefront-importer">Wavefront importer.</h1>
+<p>Wavefront is a format of 3D model really simple (human readable).
+I do a simple wawefront importer to import 3D model from blender/3dSmax/other thing and load in Pharo.</p>
+
+<p><img src="../ressources/opengl/xwing.png" alt="xwing"></p>
+
+<p>I simple parse the file and generate object that know how drawing themself. At this step, all polygon kind is correctly manage and most of the material is manage (all except texturing because blender put my ball in a juice maker with theirs <em>file path management</em>, so I begin to do a texture resolver for my importer to fix all the path issue but that is boring).
+It is slow because is still used the deprecated way.
+When I develop it I do not used PetitParser but a simple handcraft parser, maybe I should redo it using petitParser.</p>
+
+<h1 id="dds-importer">DDS importer.</h1>
+<p>DDS is a kind of texture where everything is self contain in the texture file (all coord, etc.). I so a simple importer for the Modern OpengGL layers. Time to develop it half a day.
+A usage can be found in the Tutorial number 6, in NBOpenGL-Extra.</p>
     </div>
+	
+    <div id="foot">
+		
+    </div>
+	
     <div id="sidebar">
 		<div class="slides bare" id="slidesbare">
 		    <div class="slides_container" style="width:200px;height:200px">
@@ -78,8 +100,7 @@ I really think that is possible and moreover simple to do.</p>
 		    </div>
 		</div>			
      	<ul>
-		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
-		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>	
 		<li><h2>Research</h2></a>
 			<ol>
 				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
@@ -88,19 +109,18 @@ I really think that is possible and moreover simple to do.</p>
 			</ol>
 		<li><h2>Languages Analysis</h2></a>
 			<ol>
-				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/protectedsmalltalk/">Protected Smalltalk</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
 			</ol>
 			
 		<li><h2>Others Projects</h2></a>
 			<ol>
-				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on ARM</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/chipmunk/">Storm</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
 			</ol>
       </ul>
     </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Arnaud Jean Baptiste - Gameboy Emulator</title>
-    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
     <meta name="generator" content="nanoc 3.1.8">
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
@@ -40,15 +40,135 @@
   </head>
   <body>
     <div id="main">
-      <p>I like playing game, moreover I like play old game. So I ask, how can we write a complete gameboy emulator from scratch.
+      <p>I like playing game, moreover I like to play old game.
+But I also like Pharo and to understand how the thing are done.
+So I ask myself, how can we write a complete gameboy emulator from scratch ?
 I really think that is possible and moreover simple to do.</p>
 
-<p><img src="http://ssl10.ovh.net/~jeanbaptg/ressources/gbScreen.jpg" alt="GBImage" /></p>
+<p>Searching on the internet I found a specification of the Gameboy: <a href="http://gbdev.gg8.se/wiki/articles/Main_Page">gbdev</a></p>
+
+<h2 id="processor">Processor</h2>
+<p>I choose to begin by the processor because in my opinion it represent the biggest part of the job. The processor of the Gameboy is a Zilog80. 
+But hopefully for us the version of the Z80 is simplified for the game boy and have only 2 bytecode table (512 OPCodes) instead 4 bytecode Tables.</p>
+
+<p>The basics features store in our Z80 are:</p>
+
+<ul>
+<li>The two opcode’s tables.</li>
+  <li>The seven 8bits registers: a,b,c,d,e,h,l.</li>
+  <li>The two 16bits registers: stackPointer, program counter.</li>
+  <li>The flag register(basically a 8bits register with special accessor): f.</li>
+  <li>The pointer to memory that we do not have design yet.</li>
+  <li>For performance we also store the screen representation.</li>
+</ul><h3 id="registers">Registers</h3>
+<p>The registers are just valueholder with a set of operation keeping a small historic (for flag) and a subset of operation.
+The registers loop, a 8bits register holding the 255 value. will be equal to 0 if we had one.
+Using the small historic the registers if is it required by the processor can update the statut of the flags registers.
+In our zilog some flag are not used such the overfow flag. </p>
+
+<p>The registers are basic but required some special behavior:</p>
+
+<ul>
+<li>The possibility to considering two 8bits register as one 16bits register.</li>
+  <li>The possibility to considering the flag register as an 8bits register.</li>
+</ul><h3 id="opcodes">Opcodes</h3>
+<p>Here is the fun part how to implement the two opcodes table. In first version I just generate most of the methods correctly sort in my Z80 class. But clearly it was impossible to maintain, understand and debug if problems occurs.
+Here is a <a href="../opcodes/">opcode Tables</a>.</p>
+
+<p>I plan to design opcode in a more usable way, the processor have just an array representing the opcode do not store any behavior of the opcode itself. The bytecode know <em>how</em> it should execute itself.
+here is the code representing how the processor interpret a opcode(recall: Array begin at one in Smalltalk):</p>
+
+<pre><code class="language-smalltalk"><span class="nc">GBZ80</span><span class="nf">&gt;&gt;</span><span class="ss">#interpret</span>
+	<span class="nf">|</span> <span class="nv">op</span> <span class="nf">|</span>
+	<span class="nv">op</span> <span class="o">:=</span> <span class="nv">mmu</span> <span class="nf">rb:</span>(<span class="bp">self</span> <span class="nf">pc</span> <span class="nf">value</span>)<span class="p">.</span>
+	<span class="bp">self</span> <span class="nf">incPc</span><span class="p">.</span>
+	<span class="o">^</span>(<span class="nv">opCodesTable</span> <span class="nf">at:</span> (<span class="nv">op</span> <span class="nf">+</span> <span class="m">1</span>)) <span class="nf">interpret</span><span class="p">.</span></code></pre>
+
+<p>The interpret method is understand by all the opCodes object and basically, execute itself, perform the register check (if required) and return how many cycle it take.
+Here is the code representing the interpret:</p>
+
+<pre><code class="language-smalltalk"><span class="nc">GBOpCode</span><span class="nf">&gt;&gt;</span><span class="ss">#interpret</span>
+	<span class="nf">self</span> <span class="nf">behavior</span><span class="p">.</span>
+	<span class="bp">self</span> <span class="nf">check</span><span class="p">.</span>
+	<span class="o">^</span><span class="bp">self</span> <span class="nf">tick</span></code></pre>
+
+<p>Each opcode family inherit from opcode class 
+Each opcode declare a <strong>#check</strong> method that call all the flag verification related to their behavior (some of them can be conditional), tick is time (processor cycle) required to execute the opcode (use to synchonize).
+Moreover declare a <strong>#behavior</strong> method representing and check method. By example GBADD opcodes (add to A register) the method behavior look like:</p>
+
+<pre><code class="language-smalltalk"><span class="nc">GBADD</span><span class="nf">&gt;&gt;</span><span class="ss">#behavior</span>
+	<span class="nf">processor</span> <span class="nf">a</span>  <span class="nf">+</span> <span class="nv">valueHandler</span> <span class="nf">value</span><span class="p">.</span></code></pre>
+
+<p>The valueHandler handler is instance var specific to GBADD and initialized at creation time. Every opcodes use the same process to initialize itself. If the opcode should be register in the standart opcode table it declare the method <strong>#createOpCodesInto:withProcessor:</strong> else if it should be register in the extended one it declare the method <strong>#createExtendedOpCodesInto:withProcessor:</strong>. The method <strong>#createOpCodesInto:withProcessor:</strong> and <strong>#createExtendedOpCodesInto:withProcessor:</strong> get an array (representing the opcodes table) and the processor. The role of these methods is to setup at right index with the right argument the all the opcodes of the opcodes family.
+As a example here is the method for the GBADD opcode family. These method have been generated from specification.</p>
+
+<pre><code class="language-smalltalk"><span class="nc">GBADD</span> <span class="nf">class&gt;&gt;</span><span class="ss">#createOpCodesInto:</span> <span class="nf">anArray</span> <span class="nf">withProcessor:</span> <span class="nv">aProcessor</span>
+
+	<span class="c">"GBADDr_b"</span>
+	<span class="nf">anArray</span> <span class="nf">at:</span> <span class="m">129</span> <span class="nf">put:</span> ( <span class="bp">self</span> <span class="nf">newInstruction:</span> <span class="m">129</span> <span class="nf">forProcessor:</span> <span class="nv">aProcessor</span> <span class="nf">withArg:</span> {<span class="nv">aProcessor</span> <span class="nf">b</span> } <span class="nf">tick:</span> <span class="m">4</span>)<span class="p">.</span>
+
+	<span class="c">"GBADDr_c"</span>
+	<span class="nv">anArray</span> <span class="nf">at:</span> <span class="m">130</span> <span class="nf">put:</span> ( <span class="bp">self</span> <span class="nf">newInstruction:</span> <span class="m">130</span> <span class="nf">forProcessor:</span> <span class="nv">aProcessor</span> <span class="nf">withArg:</span> {<span class="nv">aProcessor</span> <span class="nf">c</span> } <span class="nf">tick:</span> <span class="m">4</span>)<span class="p">.</span>
+
+	<span class="c">"GBADDr_d"</span>
+	<span class="nv">anArray</span> <span class="nf">at:</span> <span class="m">131</span> <span class="nf">put:</span> ( <span class="bp">self</span> <span class="nf">newInstruction:</span> <span class="m">131</span> <span class="nf">forProcessor:</span> <span class="nv">aProcessor</span> <span class="nf">withArg:</span> {<span class="nv">aProcessor</span> <span class="nf">d</span> } <span class="nf">tick:</span> <span class="m">4</span>)<span class="p">.</span>
+
+	<span class="c">"GBADDr_e"</span>
+	<span class="nv">anArray</span> <span class="nf">at:</span> <span class="m">132</span> <span class="nf">put:</span> ( <span class="bp">self</span> <span class="nf">newInstruction:</span> <span class="m">132</span> <span class="nf">forProcessor:</span> <span class="nv">aProcessor</span> <span class="nf">withArg:</span> {<span class="nv">aProcessor</span> <span class="nf">e</span> } <span class="nf">tick:</span> <span class="m">4</span>)<span class="p">.</span>
+
+	<span class="c">"GBADDr_h"</span>
+	<span class="nv">anArray</span> <span class="nf">at:</span> <span class="m">133</span> <span class="nf">put:</span> ( <span class="bp">self</span> <span class="nf">newInstruction:</span> <span class="m">133</span> <span class="nf">forProcessor:</span> <span class="nv">aProcessor</span> <span class="nf">withArg:</span> {<span class="nv">aProcessor</span> <span class="nf">h</span> } <span class="nf">tick:</span> <span class="m">4</span>)<span class="p">.</span>
+
+	<span class="c">"GBADDr_l"</span>
+	<span class="nv">anArray</span> <span class="nf">at:</span> <span class="m">134</span> <span class="nf">put:</span> ( <span class="bp">self</span> <span class="nf">newInstruction:</span> <span class="m">134</span> <span class="nf">forProcessor:</span> <span class="nv">aProcessor</span> <span class="nf">withArg:</span> {<span class="nv">aProcessor</span> <span class="nf">l</span> } <span class="nf">tick:</span> <span class="m">4</span>)<span class="p">.</span>
+
+	<span class="c">"GBADDHL"</span>
+	<span class="nv">anArray</span> <span class="nf">at:</span> <span class="m">135</span> <span class="nf">put:</span> ( <span class="bp">self</span> <span class="nf">newInstruction:</span> <span class="m">135</span> <span class="nf">forProcessor:</span> <span class="nv">aProcessor</span> <span class="nf">withArg:</span> {[<span class="nv">aProcessor</span> <span class="nf">memoryAtHL</span>] } <span class="nf">tick:</span> <span class="m">8</span>)<span class="p">.</span>
+
+	<span class="c">"GBADDr_a"</span>
+	<span class="nv">anArray</span> <span class="nf">at:</span> <span class="m">136</span> <span class="nf">put:</span> ( <span class="bp">self</span> <span class="nf">newInstruction:</span> <span class="m">136</span> <span class="nf">forProcessor:</span> <span class="nv">aProcessor</span> <span class="nf">withArg:</span> {<span class="nv">aProcessor</span> <span class="nf">a</span>} <span class="nf">tick:</span> <span class="m">4</span>)<span class="p">.</span>
+
+	<span class="c">"GBADDn"</span>
+	<span class="nv">anArray</span> <span class="nf">at:</span> <span class="m">199</span> <span class="nf">put:</span> ( <span class="bp">self</span> <span class="nf">newInstruction:</span> <span class="m">199</span> <span class="nf">forProcessor:</span> <span class="nv">aProcessor</span> <span class="nf">withArg:</span> {[<span class="nv">aProcessor</span> <span class="nf">memoryAtPc</span>] } <span class="nf">tick:</span> <span class="m">8</span>)<span class="p">.</span></code></pre>
+
+<p>The role of the method <strong>#newInstruction:forProcessor:withArg:tick:</strong> is to instanciate the opcode and setup the argument, here is the code:</p>
+
+<pre><code class="language-smalltalk"><span class="nc">GBOpCode</span><span class="nf">&gt;&gt;</span><span class="ss">#newInstruction:</span> <span class="nf">anInteger</span> <span class="nf">forProcessor:</span> <span class="nv">aProcessor</span> <span class="nf">withArg:</span> <span class="nv">argArray</span> <span class="nf">tick:</span> <span class="nv">anotherInteger</span>
+	<span class="nf">|</span> <span class="nv">inst</span> <span class="nf">cnt</span> <span class="nf">|</span> 
+	<span class="nv">inst</span> <span class="o">:=</span> <span class="bp">self</span> <span class="nb">new</span>
+		<span class="nf">instVarAt:</span> <span class="m">1</span> <span class="nf">put:</span> <span class="nv">aProcessor</span><span class="p">;</span>
+		<span class="nf">instVarAt:</span> <span class="m">2</span> <span class="nf">put:</span> <span class="nv">anInteger</span><span class="p">;</span>
+		<span class="nf">instVarAt:</span> <span class="m">3</span> <span class="nf">put:</span> <span class="nv">anotherInteger</span><span class="p">;</span>
+		<span class="nf">yourself</span><span class="p">.</span>
+	<span class="nv">cnt</span> <span class="o">:=</span> <span class="m">4</span><span class="p">.</span>
+	<span class="nv">argArray</span> <span class="nf">do:</span>[<span class="o">:</span><span class="nv">e</span> <span class="o">|</span> <span class="nv">inst</span>  <span class="nf">instVarAt:</span> <span class="nv">cnt</span> <span class="nf">put:</span> <span class="nv">e</span><span class="p">.</span> <span class="nv">cnt</span> <span class="o">:=</span> <span class="nv">cnt</span> <span class="nf">+</span> <span class="m">1</span><span class="p">.</span>]<span class="p">.</span>
+	<span class="o">^</span><span class="nv">inst</span></code></pre>
+
+<p>To resume, all opcodes are regrouped by family, each class define, the index in the opcode tables, the common behavior and how the argument should be initialized.
+After doing that for each opcode family, we just do:</p>
+
+<pre><code class="language-smalltalk"><span class="nc">GBOpCode</span> <span class="nf">class&gt;&gt;</span><span class="ss">#createAllOpCodesForProcessor:</span> <span class="nf">proc</span>
+	<span class="nf">|</span><span class="nv">array</span> <span class="nf">extendedArray</span> <span class="nf">|</span>
+	<span class="nv">array</span> <span class="o">:=</span> <span class="nc">Array</span> <span class="nf">new:</span> <span class="m">256</span><span class="p">.</span>
+	<span class="nv">extendedArray</span> <span class="o">:=</span> <span class="nc">Array</span> <span class="nf">new:</span> <span class="m">256</span><span class="p">.</span>
+	<span class="bp">self</span> <span class="nf">allSubclassesDo:</span> [<span class="o">:</span><span class="nv">e</span>  <span class="o">|</span> 
+		(<span class="nv">e</span> <span class="nf">respondsTo:</span> <span class="ss">#createOpCodesInto:withProcessor:</span>) 
+			<span class="nb">ifTrue:</span>[ <span class="nv">e</span> <span class="nf">createOpCodesInto:</span> <span class="nv">array</span> <span class="nf">withProcessor:</span> <span class="nv">proc</span><span class="p">.</span> ]<span class="p">.</span>
+		(<span class="nv">e</span> <span class="nf">respondsTo:</span> <span class="ss">#createExtendedOpCodesInto:withProcessor:</span>) 
+			<span class="nb">ifTrue:</span>[<span class="nv">e</span> <span class="nf">createExtendedOpCodesInto:</span> <span class="nv">extendedArray</span> <span class="nf">withProcessor:</span> <span class="nv">proc</span><span class="p">.</span>]<span class="p">.</span>
+		 ]<span class="p">.</span>
+	
+	<span class="nv">proc</span> <span class="nf">opCodesTable:</span> <span class="nv">array</span><span class="p">.</span>
+	<span class="nv">proc</span> <span class="nf">extendedOpCodesTable:</span> <span class="nv">extendedArray</span><span class="p">.</span></code></pre>
+
+<p>And now we have our tables of opcodes correctly setup, in a readable way. The dispatch mechanism is manage by the array API that is fast enought for us.</p>
+
+<h3 id="memory">Memory</h3>
+<p>The second big part is the memory. Do not want to explain it now but soon I promise.</p>
 
 <h3 id="roadmap">RoadMap</h3>
 <ul>
-  <li>Processor with the 512 bytcode - done </li>
-  <li>Memory - done</li>
+<li>Memory - done</li>
   <li>passing bios execution - done yes jb 1 gameboy 0</li>
   <li>Basic Cartridge (tetris like ) - done</li>
   <li>Sync between memory, screen and processo - OMG, done </li>
@@ -59,14 +179,20 @@ I really think that is possible and moreover simple to do.</p>
   <li>sound - todo</li>
   <li>advance cartridge - todo</li>
   <li>serial - todo</li>
-</ul>
+</ul><h2 id="cumulated-effort">Cumulated effort:</h2>
+<pre><code>5 month (as free time).
+</code></pre>
 
 <h3 id="ressources">Ressources:</h3>
 <ul>
-  <li><a href="http://smalltalkhub.com/#!/~jeanbaptistearnaud/GameBoyEmulator">smalltalkhub::GameBoyEmulator</a></li>
+<li><a href="http://smalltalkhub.com/#!/~jeanbaptistearnaud/GameBoyEmulator">smalltalkhub::GameBoyEmulator</a></li>
 </ul>
-
     </div>
+	
+    <div id="foot">
+		
+    </div>
+	
     <div id="sidebar">
 		<div class="slides bare" id="slidesbare">
 		    <div class="slides_container" style="width:200px;height:200px">
@@ -78,8 +204,7 @@ I really think that is possible and moreover simple to do.</p>
 		    </div>
 		</div>			
      	<ul>
-		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
-		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>	
 		<li><h2>Research</h2></a>
 			<ol>
 				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
@@ -88,19 +213,18 @@ I really think that is possible and moreover simple to do.</p>
 			</ol>
 		<li><h2>Languages Analysis</h2></a>
 			<ol>
-				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/protectedsmalltalk/">Protected Smalltalk</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
 			</ol>
 			
 		<li><h2>Others Projects</h2></a>
 			<ol>
-				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on ARM</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/chipmunk/">Storm</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
 			</ol>
       </ul>
     </div>

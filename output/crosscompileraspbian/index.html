@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - Cross-Compiles Pharo for Raspbian</title>
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      <p>If you are not familiar with the usual PharoVM building process do not worry. This page will explain all the requirement step by step.
+For the following when speak about root it is the root of your project.</p>
+
+<p>Here you will finds <a href="https://github.com/JeanBaptisteArnaud/pharoCCRaspbianScripts.git">https://github.com/JeanBaptisteArnaud/pharoCCRaspbianScripts.git</a>, scripts doing everything for you just edit the config.sh file and after</p>
+
+<pre><code class="language-bash">sh configBuilder.sh
+sh build.sh</code></pre>
+
+<p>I now look into the qemu emulation to avoid using a connected raspberrypi.</p>
+
+<p>But here all the install process explained step by step.</p>
+
+<h1 id="configure-the-builder">Configure the builder</h1>
+
+<p>First of all you will need</p>
+
+<ul>
+<li><a href="http://www.cmake.org/">Cmake</a></li>
+  <li>
+<a href="http://git-scm.com/">Git</a> and subversion</li>
+  <li>sshfs: how install it depend of your platform</li>
+</ul><h2 id="install-the-differents-toolchains">Install the differents toolchains</h2>
+<p>We use 2 differents toolchains: the cross-compilation tool from raspberrypi, and asasm a assembly compiler from RiscOS to compile the FastBltBit code.</p>
+
+<h3 id="raspberrypi-tools">raspberrypi tools</h3>
+<dl>
+<dt>Here is the link to the github repository</dt>
+  <dd>https://github.com/raspberrypi/tools.git</dd>
+</dl><pre><code class="language-bash">git clone https://github.com/raspberrypi/tools.git</code></pre>
+
+<p>I encounter some versionning problem with the toolchain, so I freeze the version to a previous one. This one should working:</p>
+
+<pre><code class="language-bash"><span class="nb">cd </span>tools
+git checkout 9c3d7b6ac692498dd36fec2872e0b55f910baac1 .</code></pre>
+
+<h3 id="asasm-is-assembly-compiler-use-to-compile-fastbltbit">AsAsm is assembly compiler use to compile FastBltBit,</h3>
+<p>here is the link to the svn, svn://svn.riscos.info/gccsdk/trunk
+I encounter some difficulty to rebuild it correctly for an unix computer 
+So here is a link to working version that I have extract:
+<a href="https://ci.inria.fr/pharo-contribution/view/ARM-Tools/job/asasm/">AsAsm unix</a>
+This executable should be added to your path.</p>
+
+<h2 id="create-your-build-environment">Create your build environment</h2>
+<p>Here is the build environment clone the main Pharo repository
+https://github.com/pharo-project/pharo-vm</p>
+
+<p>The following script will clone the repository build a newImage generator:</p>
+
+<pre><code class="language-bash">git clone https://github.com/pharo-project/pharo-vm
+<span class="nb">cd </span>pharo-vm/image/
+sh newImage.sh</code></pre>
+
+<p>Now you have a generator.image in your folder.</p>
+
+<h2 id="configure-the-raspbian">Configure the Raspbian</h2>
+
+<p>Install <a href="http://downloads.raspberrypi.org/raspbian_latest">Raspbian</a> 
+or use <a href="http://downloads.raspberrypi.org/NOOBS_latest">NOOB</a> (an all in one installer).</p>
+
+<p>Here is the tricky part, first you will need to install all the library required, as if you just compile the vm. 
+But you need for some of them rewrite the from absolute to relative path, because the scripts do not have been design to be used as a mounted platform.
+So here is the list of the fixes:</p>
+
+<pre><code class="language-bash">sudo apt-get update
+sudo apt-get install libasound2-dev libssl-dev libfreetype6-dev libgl1-mesa-dev</code></pre>
+
+<p>Now, we will fix some lib problem :-). So as we cross compile / is not root for the library point of view. Some LD script write with absolute path should be rewrite.</p>
+
+<pre><code class="language-bash">sudo <span class="nb">echo</span> <span class="s2">"/* GNU ld script</span>
+<span class="s2">	Use the shared library, but some functions are only in</span>
+<span class="s2">	the static library, so try that secondarily.	*/</span>
+<span class="s2">OUTPUT_FORMAT(elf32-littlearm)</span>
+<span class="s2">GROUP (../../../lib/arm-linux-gnueabihf/libpthread.so.0 ./libpthread_nonshared.a)"</span> &gt; /usr/lib/arm-linux-gnueabihf/libpthread.so
+
+sudo <span class="nb">echo</span> <span class="s2">"/* GNU ld script</span>
+<span class="s2">	Use the shared library, but some functions are only in</span>
+<span class="s2">	the static library, so try that secondarily.	*/</span>
+<span class="s2">OUTPUT_FORMAT(elf32-littlearm)</span>
+<span class="s2">GROUP (../../../lib/arm-linux-gnueabihf/libc.so.6 ./libc_nonshared.a AS_NEEDED ( ../../../lib/arm-linux-gnueabihf/ld-linux-armhf.so.3))"</span> &gt; /usr/lib/arm-linux-gnueabihf/libpthread.so</code></pre>
+
+<p>And finally fix the some link to library that are not correctly set:</p>
+
+<pre><code class="language-bash"> <span class="nb">cd</span> /usr/lib/arm-linux-gnueabihf/
+ sudo ln -s libSM.so.6 libSM.so
+ sudo ln -s libICE.so.6 libICE.so</code></pre>
+
+<p>Your raspberry should be ready to be used :-).</p>
+
+<h2 id="do-your-changes">Do your changes</h2>
+<p>In projectRoot/pharo-vm/image
+you can do:</p>
+
+<pre><code class="language-bash"> ./pharo-ui generator.image</code></pre>
+
+<p>Using VMMaker, you can change the Virtual machine by changing the Interpreter (StackInterpreter by default for now), or the configuration StackCrossRaspbianFastBltConfig.
+Do a subtype of StackInterpreter or StackCrossRaspbianFastBltConfig is recommended to layered your changes.</p>
+
+<p>The usual entry points are defaultInternalPlugins/defaultExternalPlugins and interpreterClass.
+So do your changes.</p>
+
+<h1 id="building-process">Building process</h1>
+
+<p>First of all, mount the RaspberryPi for be able to found the library.</p>
+
+<pre><code class="language-bash">mkdir mnt_rpi
+sshfs pi@AddressOfYourPi:/ projectRoot/mnt_rpi/</code></pre>
+
+<h2 id="generate-the-source-files">Generate the source files</h2>
+
+<pre><code class="language-bash"><span class="nb">cd </span>image
+./pharo generator.image <span class="nb">eval</span> <span class="s2">"PharoSVMBuilder new buildRaspberryPiFBB."</span></code></pre>
+<p>Or if you extend the StackCrossRaspbianFastBltConfig configuration.</p>
+
+<pre><code class="language-bash"><span class="nb">cd </span>image
+./pharo generator.image <span class="nb">eval</span> <span class="s2">"MyCustomConfig new  </span>
+<span class="s2">		generateSources; generate."</span></code></pre>
+
+<h2 id="builds">Builds</h2>
+<p>And finally build the project using cmake, but as we compile for another platform we need to configure a toolchain </p>
+
+<pre><code class="language-bash"><span class="nb">cd </span>root/pharo-vm/build
+
+sh ../scripts/extract-commit-info.sh
+
+<span class="nb">echo</span> <span class="s2">"</span>
+<span class="s2">SET(CMAKE_SYSTEM_NAME Linux)</span>
+<span class="s2">SET(CMAKE_SYSTEM_VERSION 1)</span>
+<span class="s2">set(CMAKE_SYSTEM_PROCESSOR arm)</span>
+
+<span class="s2">SET(CMAKE_C_COMPILER projectRoot/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf-gcc)</span>
+<span class="s2">SET(CMAKE_CXX_COMPILER projectRoot/tools/aarm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf-g++)</span>
+
+<span class="s2"># where is the target environment - we mounted it using sshfs</span>
+<span class="s2">SET(CMAKE_FIND_ROOT_PATH projectRoot/mnt_rpi)</span>
+
+<span class="s2"># search for programs in the build host directories</span>
+<span class="s2">SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)</span>
+<span class="s2"># for libraries and headers in the target directories</span>
+<span class="s2">SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)</span>
+<span class="s2">SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)</span>
+<span class="s2">"</span> &gt;&gt; toolchainRaspPi.cmake
+
+cmake -DCMAKE_TOOLCHAIN_FILE<span class="o">=</span>toolchainRaspPi.cmake .
+make</code></pre>
+
+<p>Fame, Success, Girls, lost 5 sanity points. </p>
+
+<p><img src="../ressources/rasp/pip.jpg" alt="pip" id="pip"></p>
+
+<h3 id="ressources">Ressources:</h3>
+<p><a href="https://ci.inria.fr/pharo-contribution/view/ARM/">jenkins</a></p>
+    </div>
+	
+    <div id="foot">
+		
+    </div>
+	
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/protectedsmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on ARM</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/chipmunk/">Storm</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>

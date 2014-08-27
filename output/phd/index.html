@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Arnaud Jean Baptiste - Research</title>
-    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
     <meta name="generator" content="nanoc 3.1.8">
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
@@ -57,14 +57,14 @@ Keywords : dynamic languages, reflective programming, open-system, security, cap
 <p>Dynamically-typed object-oriented programming languages do not provide type information until runtime. Two of their main advantages are that they allow fast prototyping and integrating changes at runtime. The ability of dynamically-typed languages to support program changes at runtime and the lack of type information doom the classic security approaches to failure. Controlling references to single objects and to graphs of objects is essential to build secure systems. Existing approaches are commonly based on static type system and cannot be applied to dynamically-typed languages.
 This thesis argue that:
 In the context of dynamically-typed languages, reifying references, controlling behavior, and isolating state via such references, is a practical way to control references.
-This thesis makes five contributions:
-+ We propose dynamic read-only objects (DRO) as one kind of adaptation of behavioral change at
-reference-level.
-+ We generalize the DRO model to enable more generic behavioral changes. We extend the Pharo programming environment and language with Handles, that are first-class references with the ability to change the behavior of referenced objects.
-+ We define Metahandle to offer flexibility and adaptability to controlled references.
-+ We propose SHandle, an extension of the Handle model to isolate side effects at the level of references. - And finally, we formalize the Handles and SHandle models to represent and explain their semantics.</p>
+This thesis makes five contributions:</p>
 
-<p>As validation of our thesis we have implemented three approaches relevant to securing system using our model. In addition, as proof of concept we extended the Pharo virtual machine to support Handles, Metahandles and SHandles.
+<ul>
+<li>We propose dynamic read-only objects (DRO) as one kind of adaptation of behavioral change at reference-level.</li>
+  <li>We generalize the DRO model to enable more generic behavioral changes. We extend the Pharo programming environment and language with Handles, that are first-class references with the ability to change the behavior of referenced objects.</li>
+  <li>We define Metahandle to offer flexibility and adaptability to controlled references.</li>
+  <li>We propose SHandle, an extension of the Handle model to isolate side effects at the level of references. - And finally, we formalize the Handles and SHandle models to represent and explain their semantics.</li>
+</ul><p>As validation of our thesis we have implemented three approaches relevant to securing system using our model. In addition, as proof of concept we extended the Pharo virtual machine to support Handles, Metahandles and SHandles.
 Keyword: security, dynamically-typed languages, reflection, language design, first class reference, object- oriented programming.</p>
 
 <h3 id="scientific-challenges">scientific challenges</h3>
@@ -91,7 +91,7 @@ Software Transactional Memory (STM) is a modern paradigm, based on transaction s
 <h3 id="revocable-reference">Revocable Reference</h3>
 <p>This approach defines specific references that can be revoked when the owner considers they should not be shared anymore.</p>
 
-<p><img src="../ressources/phd/ChallengeBobAndCarolV3.png" alt="ChallengeBobAndCarolV3" id="revocable" /></p>
+<p><img src="../ressources/phd/ChallengeBobAndCarolV3.png" alt="ChallengeBobAndCarolV3" id="revocable"></p>
 
 <p>The previous figures shows an example with three objects: Alice can give Bob a reference to Doc. But Alice should be able to revoke it later. Bob cannot access it anymore even if he holds a reference to it. The conceptual solution proposed by Miller is to create a revoking facet (R) and pass it to Bob. Such a facet can be seen as an object with a restricted interface or a first-class reference. Note that in this original proposal revocable references are not propagated automatically. The facet needs to be carefully thought to not leak references and only return facets instead.</p>
 
@@ -120,14 +120,18 @@ To make the solution viable, I needed to learn message passing mechanism, object
 <p>As the problematic and the solution presented in my Phd is relativaly complex, I write a formal semantic to describe the impact of my solution on the language itself.</p>
 
 <h3 id="paper-writing">Paper writing</h3>
-<p>In addition I learn the basic of scientific writing. During my Phd, I publish one paper in international conference (TOOL&#8217;s 2009 rank B), and a Paper is under minor revision in a Journal (SCICO rank A). A poster was also presented at GDR/GPL 2011.
+<p>In addition I learn the basic of scientific writing. During my Phd, I publish one paper in international conference (TOOL’s 2009 rank B), and a Paper is under minor revision in a Journal (SCICO rank A). A poster was also presented at GDR/GPL 2011.
 For more information go into the publication section.</p>
 
 <h2 id="ressources">Ressources</h2>
-<p>File: <a href="../ressources/phd/PhD-2013-Arnaud.pdf">pdf</a>, <a href="../ressources/phd/slides.pdf">slides</a>, <a href="../ressources/phd/phd.bib">bib</a><br />
-Sources: Todo</p>
-
+<p>File: <a href="../ressources/phd/PhD-2013-Arnaud.pdf">pdf</a>, <a href="../ressources/phd/slides.pdf">slides</a>, <a href="../ressources/phd/phd.bib">bib</a><br>
+Sources: <a href="https://ci.inria.fr/rmod/view/Handles/job/Handles-VM/">VM</a>,<a href="https://ci.inria.fr/rmod/view/Handles/job/Handles-Image/">image</a></p>
     </div>
+	
+    <div id="foot">
+		
+    </div>
+	
     <div id="sidebar">
 		<div class="slides bare" id="slidesbare">
 		    <div class="slides_container" style="width:200px;height:200px">
@@ -139,8 +143,7 @@ Sources: Todo</p>
 		    </div>
 		</div>			
      	<ul>
-		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
-		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>	
 		<li><h2>Research</h2></a>
 			<ol>
 				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
@@ -149,19 +152,18 @@ Sources: Todo</p>
 			</ol>
 		<li><h2>Languages Analysis</h2></a>
 			<ol>
-				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/protectedsmalltalk/">Protected Smalltalk</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
 			</ol>
 			
 		<li><h2>Others Projects</h2></a>
 			<ol>
-				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on ARM</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/chipmunk/">Storm</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
 			</ol>
       </ul>
     </div>

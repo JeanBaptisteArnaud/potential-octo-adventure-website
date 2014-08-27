@@ -28,6 +28,7 @@ compile '*' do
   else
     filter :erb
     filter :kramdown
+    filter :colorize_syntax, :default_colorizer => :pygmentize
     layout 'default'
   end
 end

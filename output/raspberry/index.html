@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Arnaud Jean Baptiste - Pharo on Raspberry Pi</title>
-    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
     <meta name="generator" content="nanoc 3.1.8">
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
@@ -44,27 +44,30 @@
 
 <p><em>The <a href="http://www.raspberrypi.org/">Raspberry Pi</a> is a credit-card sized computer that plugs into your TV and a keyboard. It’s a capable little PC which can be used for many of the things that your desktop PC does, like spreadsheets, word-processing and games. It also plays high-definition video. We want to see it being used by kids all over the world to learn programming</em></p>
 
-<p><img src="http://ssl10.ovh.net/~jeanbaptg/ressources/Screen-Shot-2012-12-24-at-10.59.55-1024x722.png" alt="Rasp Spec" />
+<p><img src="../ressources/rasp/rasp.png" alt="Rasp Spec" id="raspSpec">
 Source: http://www.raspberrypi.org/</p>
 
 <p>The idea is to port the Pharo Virtual Machine on Raspberry Pi. </p>
 
-<h3 id="roadmap">RoadMap</h3>
+<h3 id="work-done">Work done</h3>
 <ul>
-  <li>compile StackVM - done </li>
-  <li>Sync with github pharo repository - done</li>
-  <li>do a jenkins job - done</li>
-  <li>merge with github pharo repository - todo</li>
-  <li>introduce fast bltbit change (faster UI) - need work.</li>
-  <li>compile CogVM - need  work</li>
-</ul>
-
-<h3 id="ressources">Ressources:</h3>
+<li>Compile StackVM Prototype.</li>
+  <li>Sync with github pharo repository.</li>
+  <li>Jenkins job and then have a RaspberryPi VM generated.</li>
+  <li>Merge with github pharo repository.</li>
+  <li>Introduce fast bltbit change (faster UI) - A real cool stuff a fast implementation of <a href="http://en.wikipedia.org/wiki/Bit_blit">bltbit</a>, which is one of the brick of the user interface of Pharo. But this implementation is wrote directly in ARM assembly and need some minors changes in the virtual machine configuration, especially to work with the current continuous integration approach.</li>
+  <li>GPIO Control</li>
+</ul><h3 id="documentation">Documentation</h3>
 <ul>
-  <li><a href="https://ci.inria.fr/pharo-contribution/view/RaspberryPi/job/RaspberryPi-Publish/">jenkins</a></li>
-</ul>
-
+<li><a href="../crosscompileraspbian/">Cross-Compiles Compilation for Raspbian</a></li>
+</ul><h3 id="ressources">Ressources:</h3>
+<p><a href="https://ci.inria.fr/pharo-contribution/view/RaspberryPi/job/RaspberryPi-Compilation/">jenkins</a></p>
     </div>
+	
+    <div id="foot">
+		
+    </div>
+	
     <div id="sidebar">
 		<div class="slides bare" id="slidesbare">
 		    <div class="slides_container" style="width:200px;height:200px">
@@ -76,8 +79,7 @@ Source: http://www.raspberrypi.org/</p>
 		    </div>
 		</div>			
      	<ul>
-		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
-		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>	
 		<li><h2>Research</h2></a>
 			<ol>
 				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
@@ -86,19 +88,18 @@ Source: http://www.raspberrypi.org/</p>
 			</ol>
 		<li><h2>Languages Analysis</h2></a>
 			<ol>
-				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/protectedsmalltalk/">Protected Smalltalk</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
 			</ol>
 			
 		<li><h2>Others Projects</h2></a>
 			<ol>
-				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on ARM</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/chipmunk/">Storm</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
 			</ol>
       </ul>
     </div>

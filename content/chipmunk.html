@@ -1,0 +1,26 @@
+--- 
+title: Storm
+---
+
+Chipmunk is 2D physic engine develop in C, link.
+The idea is come to bind this physic engine using nativeBoost and do some stupid but terrebly fun thing. Storm is a small game engine using Chipmunk library (as FFI).
+You can see 3 cools video done and _interpreted_ by Esteban Lorenzano:
+
+Falling Ball:
+
+<iframe width="640" height="390" src="//www.youtube.com/embed/ZK-JlbeN09A" frameborder="0" allowfullscreen></iframe>
+
+500 balls in a cube:
+
+<iframe width="640" height="390" src="//www.youtube.com/embed/GkS6rHVUJko" frameborder="0" allowfullscreen></iframe>
+
+Catch the balls, a small mini game demo:
+
+<iframe width="640" height="360" src="//www.youtube.com/embed/Hu_C0ldSqrs?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+
+I developp some example for storm and all the physical constraint(put a pivo between two figure), and callback (collision, etc.).
+
+We now used __Athens__ for rendering.
+
+It is not really complex but really long because most of the time the ffi interface is not enough to be perfectly used via native boost (or we want maybe to do too complex thing).
+

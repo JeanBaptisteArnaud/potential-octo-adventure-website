@@ -1,0 +1,62 @@
+--- 
+title: Protected Smalltalk 
+---
+# Protected Smalltalk
+
+This project is a proof of concept.
+
+## Main idea
+The goal of this project is to implement the access modifiers _protected_ and _private_ for methods in Pharo. We take the most naive and simple approach. Threes Methods dictionary, one private, one protected and one public. two separated send process in virtual machine,  _self send_ and the _object send_. The _object send_ will do the normal lookup begin in the public method dictionary. And the _self send_ will search first in the private method dictionary then continue the lookup by searching in the protected method dictionary of the super class.
+Note that super send should lookup in protected dictionary.
+
+## SelfSend or ObjectSend.
+First of all, how detect the difference between _self send_ and _object send_, compiler can do that easily we just need a special Bytecode for that, we extends [Opal Compiler](../opalcompiler/) to do that. We search in the virtual machine one of the last bytecode unused (one of the newspeak virtual machine: 139).
+I basically do my own bytecode generator with a small pending mecanisme for detect the _self send_ case. 
+
+I also extends the Compilation process to install the compiled methods in corrects dictionaries. 
+
+## Limit of the model
+The virtual machine is a wall that is a cool property for security purpose, but as far we can manipulate all the image content this property is more or less useless.
+Then we can dynamically add some method in public dictionary, if we do not control reference in the environmnent security approach are [DOOOOoom](http://www.youtube.com/watch?v=6bbIBs0P2t0). For more information about that read my [PhD](../phd/).
+
+Another limit of the model is represented by this code:
+
+~~~~~~~~ smalltalk
+	| mySelf | 
+	"1"
+	self foo. "I am Self send"
+	
+	"2"
+	obj foo. "I am object send"
+	
+	"3"
+	mySelf := self.
+	mySelf foo. "I am object send !!!!!"
+	
+~~~~~~~~
+
++ Case 1: _self send_ easily detected, it is a normal case.
++ Case 2: _object send_ easily detected, it is a normal case.
++ Case 3: here we detect an _object send_, yes it is ugly to code like that but it is a limit that should be underline.
+
+
+## Status
+Need to write tests and test the implementation. [Continuous integration server](https://ci.inria.fr/pharo-contribution/view/ProtectedSmalltalk/) is set up and generate correctly the virtual machine and the image side.
+
+## Cumulated effort: 
+	2 days.
+	
+	
+# Protected Smalltalk, from Camille Teruel
+Camille Teruel (a PhD student of the Rmod team), propose a seperated approach for managing scope, completly implemented in image side. I delegate to Camille the explaination, but basically it is a cool idea :-).
+
+## Status
+ The private visibility (for method) have been implemented and work (with small bug).
+And the code can be found and follow at: [PrivateMethods](http://smalltalkhub.com/#!/~CamilleTeruel/PrivateMethods)
+
+## Cumulated effort: 
+	1 day ( pair program with Camillle).
+
+
+
+

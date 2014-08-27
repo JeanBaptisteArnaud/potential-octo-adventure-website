@@ -2,13 +2,147 @@
 title: Gameboy Emulator
 ---
 
-I like playing game, moreover I like play old game. So I ask, how can we write a complete gameboy emulator from scratch.
+I like playing game, moreover I like to play old game.
+But I also like Pharo and to understand how the thing are done.
+So I ask myself, how can we write a complete gameboy emulator from scratch ?
 I really think that is possible and moreover simple to do.
 
-![GBImage](http://ssl10.ovh.net/~jeanbaptg/ressources/gbScreen.jpg)
+Searching on the internet I found a specification of the Gameboy: [gbdev](http://gbdev.gg8.se/wiki/articles/Main_Page)
+
+## Processor
+I choose to begin by the processor because in my opinion it represent the biggest part of the job. The processor of the Gameboy is a Zilog80. 
+But hopefully for us the version of the Z80 is simplified for the game boy and have only 2 bytecode table (512 OPCodes) instead 4 bytecode Tables.
+
+The basics features store in our Z80 are:
+
++ The two opcode's tables.
++ The seven 8bits registers: a,b,c,d,e,h,l.
++ The two 16bits registers: stackPointer, program counter.
++ The flag register(basically a 8bits register with special accessor): f.
++ The pointer to memory that we do not have design yet.
++ For performance we also store the screen representation.
+
+### Registers
+The registers are just valueholder with a set of operation keeping a small historic (for flag) and a subset of operation.
+The registers loop, a 8bits register holding the 255 value. will be equal to 0 if we had one.
+Using the small historic the registers if is it required by the processor can update the statut of the flags registers.
+In our zilog some flag are not used such the overfow flag. 
+
+The registers are basic but required some special behavior:
+
++ The possibility to considering two 8bits register as one 16bits register.
++ The possibility to considering the flag register as an 8bits register.
+
+### Opcodes
+Here is the fun part how to implement the two opcodes table. In first version I just generate most of the methods correctly sort in my Z80 class. But clearly it was impossible to maintain, understand and debug if problems occurs.
+Here is a [opcode Tables](../opcodes/).
+
+
+I plan to design opcode in a more usable way, the processor have just an array representing the opcode do not store any behavior of the opcode itself. The bytecode know _how_ it should execute itself.
+here is the code representing how the processor interpret a opcode(recall: Array begin at one in Smalltalk):
+
+~~~~~~~~ smalltalk
+GBZ80>>#interpret
+	| op |
+	op := mmu rb:(self pc value).
+	self incPc.
+	^(opCodesTable at: (op + 1)) interpret. 
+~~~~~~~~
+
+The interpret method is understand by all the opCodes object and basically, execute itself, perform the register check (if required) and return how many cycle it take.
+Here is the code representing the interpret:
+
+~~~~~~~~ smalltalk
+GBOpCode>>#interpret
+	self behavior.
+	self check.
+	^self tick 
+~~~~~~~~
+
+Each opcode family inherit from opcode class 
+Each opcode declare a __#check__ method that call all the flag verification related to their behavior (some of them can be conditional), tick is time (processor cycle) required to execute the opcode (use to synchonize).
+Moreover declare a __#behavior__ method representing and check method. By example GBADD opcodes (add to A register) the method behavior look like:
+
+~~~~~~~~ smalltalk
+GBADD>>#behavior
+	processor a  + valueHandler value.
+~~~~~~~~
+
+The valueHandler handler is instance var specific to GBADD and initialized at creation time. Every opcodes use the same process to initialize itself. If the opcode should be register in the standart opcode table it declare the method __#createOpCodesInto:withProcessor:__ else if it should be register in the extended one it declare the method __#createExtendedOpCodesInto:withProcessor:__. The method __#createOpCodesInto:withProcessor:__ and __#createExtendedOpCodesInto:withProcessor:__ get an array (representing the opcodes table) and the processor. The role of these methods is to setup at right index with the right argument the all the opcodes of the opcodes family.
+As a example here is the method for the GBADD opcode family. These method have been generated from specification.
+
+
+~~~~~~~~ smalltalk
+GBADD class>>#createOpCodesInto: anArray withProcessor: aProcessor
+
+	"GBADDr_b"
+	anArray at: 129 put: ( self newInstruction: 129 forProcessor: aProcessor withArg: {aProcessor b } tick: 4).
+
+	"GBADDr_c"
+	anArray at: 130 put: ( self newInstruction: 130 forProcessor: aProcessor withArg: {aProcessor c } tick: 4).
+
+	"GBADDr_d"
+	anArray at: 131 put: ( self newInstruction: 131 forProcessor: aProcessor withArg: {aProcessor d } tick: 4).
+
+	"GBADDr_e"
+	anArray at: 132 put: ( self newInstruction: 132 forProcessor: aProcessor withArg: {aProcessor e } tick: 4).
+
+	"GBADDr_h"
+	anArray at: 133 put: ( self newInstruction: 133 forProcessor: aProcessor withArg: {aProcessor h } tick: 4).
+
+	"GBADDr_l"
+	anArray at: 134 put: ( self newInstruction: 134 forProcessor: aProcessor withArg: {aProcessor l } tick: 4).
+
+	"GBADDHL"
+	anArray at: 135 put: ( self newInstruction: 135 forProcessor: aProcessor withArg: {[aProcessor memoryAtHL] } tick: 8).
+
+	"GBADDr_a"
+	anArray at: 136 put: ( self newInstruction: 136 forProcessor: aProcessor withArg: {aProcessor a} tick: 4).
+
+	"GBADDn"
+	anArray at: 199 put: ( self newInstruction: 199 forProcessor: aProcessor withArg: {[aProcessor memoryAtPc] } tick: 8).
+~~~~~~~~
+
+The role of the method __#newInstruction:forProcessor:withArg:tick:__ is to instanciate the opcode and setup the argument, here is the code:
+
+~~~~~~~~ smalltalk
+GBOpCode>>#newInstruction: anInteger forProcessor: aProcessor withArg: argArray tick: anotherInteger
+	| inst cnt | 
+	inst := self new
+		instVarAt: 1 put: aProcessor;
+		instVarAt: 2 put: anInteger;
+		instVarAt: 3 put: anotherInteger;
+		yourself.
+	cnt := 4.
+	argArray do:[:e | inst  instVarAt: cnt put: e. cnt := cnt + 1.].
+	^inst
+~~~~~~~~	
+
+To resume, all opcodes are regrouped by family, each class define, the index in the opcode tables, the common behavior and how the argument should be initialized.
+After doing that for each opcode family, we just do:
+
+~~~~~~~~ smalltalk
+GBOpCode class>>#createAllOpCodesForProcessor: proc
+	|array extendedArray |
+	array := Array new: 256.
+	extendedArray := Array new: 256.
+	self allSubclassesDo: [:e  | 
+		(e respondsTo: #createOpCodesInto:withProcessor:) 
+			ifTrue:[ e createOpCodesInto: array withProcessor: proc. ].
+		(e respondsTo: #createExtendedOpCodesInto:withProcessor:) 
+			ifTrue:[e createExtendedOpCodesInto: extendedArray withProcessor: proc.].
+		 ].
+	
+	proc opCodesTable: array.
+	proc extendedOpCodesTable: extendedArray.
+~~~~~~~~
+
+And now we have our tables of opcodes correctly setup, in a readable way. The dispatch mechanism is manage by the array API that is fast enought for us.
+
+### Memory
+The second big part is the memory. Do not want to explain it now but soon I promise.
 
 ### RoadMap
-+ Processor with the 512 bytcode - done 
 + Memory - done
 + passing bios execution - done yes jb 1 gameboy 0
 + Basic Cartridge (tetris like ) - done
@@ -21,6 +155,10 @@ I really think that is possible and moreover simple to do.
 + advance cartridge - todo
 + serial - todo
 
+
+
+## Cumulated effort: 
+	5 month (as free time).
 
 ### Ressources:
 + [smalltalkhub::GameBoyEmulator](http://smalltalkhub.com/#!/~jeanbaptistearnaud/GameBoyEmulator)

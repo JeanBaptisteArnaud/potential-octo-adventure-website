@@ -1,0 +1,183 @@
+--- 
+title: Cross-Compiles Pharo for Raspbian
+---
+If you are not familiar with the usual PharoVM building process do not worry. This page will explain all the requirement step by step.
+For the following when speak about root it is the root of your project.
+
+Here you will finds [https://github.com/JeanBaptisteArnaud/pharoCCRaspbianScripts.git](https://github.com/JeanBaptisteArnaud/pharoCCRaspbianScripts.git), scripts doing everything for you just edit the config.sh file and after
+
+~~~~~~~~ bash
+sh configBuilder.sh
+sh build.sh
+~~~~~~~~ 
+
+I now look into the qemu emulation to avoid using a connected raspberrypi.
+
+But here all the install process explained step by step.
+
+# Configure the builder
+
+First of all you will need
+
++ [Cmake](http://www.cmake.org/)
++ [Git](http://git-scm.com/) and subversion
++ sshfs: how install it depend of your platform
+
+## Install the differents toolchains
+We use 2 differents toolchains: the cross-compilation tool from raspberrypi, and asasm a assembly compiler from RiscOS to compile the FastBltBit code.
+
+### raspberrypi tools
+Here is the link to the github repository
+: https://github.com/raspberrypi/tools.git
+
+~~~~~~~~ bash
+git clone https://github.com/raspberrypi/tools.git
+~~~~~~~~ 
+
+I encounter some versionning problem with the toolchain, so I freeze the version to a previous one. This one should working:
+
+~~~~~~~~ bash
+cd tools
+git checkout 9c3d7b6ac692498dd36fec2872e0b55f910baac1 .
+~~~~~~~~ 
+
+### AsAsm is assembly compiler use to compile FastBltBit,
+here is the link to the svn, svn://svn.riscos.info/gccsdk/trunk
+I encounter some difficulty to rebuild it correctly for an unix computer 
+So here is a link to working version that I have extract:
+[AsAsm unix](https://ci.inria.fr/pharo-contribution/view/ARM-Tools/job/asasm/)
+This executable should be added to your path.
+
+## Create your build environment
+Here is the build environment clone the main Pharo repository
+https://github.com/pharo-project/pharo-vm
+
+The following script will clone the repository build a newImage generator:
+
+~~~~~~~~ bash
+git clone https://github.com/pharo-project/pharo-vm
+cd pharo-vm/image/
+sh newImage.sh
+~~~~~~~~ 
+
+Now you have a generator.image in your folder.
+
+## Configure the Raspbian
+
+Install [Raspbian](http://downloads.raspberrypi.org/raspbian_latest) 
+or use [NOOB](http://downloads.raspberrypi.org/NOOBS_latest) (an all in one installer).
+
+Here is the tricky part, first you will need to install all the library required, as if you just compile the vm. 
+But you need for some of them rewrite the from absolute to relative path, because the scripts do not have been design to be used as a mounted platform.
+So here is the list of the fixes:
+
+~~~~~~~~ bash
+sudo apt-get update
+sudo apt-get install libasound2-dev libssl-dev libfreetype6-dev libgl1-mesa-dev
+~~~~~~~~
+
+Now, we will fix some lib problem :-). So as we cross compile / is not root for the library point of view. Some LD script write with absolute path should be rewrite.
+
+~~~~~~~~ bash
+sudo echo "/* GNU ld script
+	Use the shared library, but some functions are only in
+	the static library, so try that secondarily.	*/
+OUTPUT_FORMAT(elf32-littlearm)
+GROUP (../../../lib/arm-linux-gnueabihf/libpthread.so.0 ./libpthread_nonshared.a)" > /usr/lib/arm-linux-gnueabihf/libpthread.so
+
+sudo echo "/* GNU ld script
+	Use the shared library, but some functions are only in
+	the static library, so try that secondarily.	*/
+OUTPUT_FORMAT(elf32-littlearm)
+GROUP (../../../lib/arm-linux-gnueabihf/libc.so.6 ./libc_nonshared.a AS_NEEDED ( ../../../lib/arm-linux-gnueabihf/ld-linux-armhf.so.3))" > /usr/lib/arm-linux-gnueabihf/libpthread.so
+~~~~~~~~
+
+And finally fix the some link to library that are not correctly set:
+
+~~~~~~~~ bash
+ cd /usr/lib/arm-linux-gnueabihf/
+ sudo ln -s libSM.so.6 libSM.so
+ sudo ln -s libICE.so.6 libICE.so
+~~~~~~~~
+
+Your raspberry should be ready to be used :-).
+
+
+## Do your changes
+In projectRoot/pharo-vm/image
+you can do:
+
+~~~~~~~~ bash
+ ./pharo-ui generator.image
+~~~~~~~~
+
+Using VMMaker, you can change the Virtual machine by changing the Interpreter (StackInterpreter by default for now), or the configuration StackCrossRaspbianFastBltConfig.
+Do a subtype of StackInterpreter or StackCrossRaspbianFastBltConfig is recommended to layered your changes.
+
+The usual entry points are defaultInternalPlugins/defaultExternalPlugins and interpreterClass.
+So do your changes.
+
+# Building process
+
+First of all, mount the RaspberryPi for be able to found the library.
+
+~~~~~~~~ bash
+mkdir mnt_rpi
+sshfs pi@AddressOfYourPi:/ projectRoot/mnt_rpi/
+~~~~~~~~ 
+
+## Generate the source files
+
+~~~~~~~~ bash
+cd image
+./pharo generator.image eval "PharoSVMBuilder new buildRaspberryPiFBB."
+~~~~~~~~
+Or if you extend the StackCrossRaspbianFastBltConfig configuration.
+
+~~~~~~~~ bash
+cd image
+./pharo generator.image eval "MyCustomConfig new  
+		generateSources; generate."
+~~~~~~~~
+
+## Builds
+And finally build the project using cmake, but as we compile for another platform we need to configure a toolchain 
+
+~~~~~~~~ bash
+cd root/pharo-vm/build
+
+sh ../scripts/extract-commit-info.sh
+
+echo "
+SET(CMAKE_SYSTEM_NAME Linux)
+SET(CMAKE_SYSTEM_VERSION 1)
+set(CMAKE_SYSTEM_PROCESSOR arm)
+
+SET(CMAKE_C_COMPILER projectRoot/tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf-gcc)
+SET(CMAKE_CXX_COMPILER projectRoot/tools/aarm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian/bin/arm-linux-gnueabihf-g++)
+
+# where is the target environment - we mounted it using sshfs
+SET(CMAKE_FIND_ROOT_PATH projectRoot/mnt_rpi)
+
+# search for programs in the build host directories
+SET(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
+# for libraries and headers in the target directories
+SET(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
+SET(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
+" >> toolchainRaspPi.cmake
+
+cmake -DCMAKE_TOOLCHAIN_FILE=toolchainRaspPi.cmake .
+make
+~~~~~~~~
+
+Fame, Success, Girls, lost 5 sanity points. 
+
+
+
+
+![pip](../ressources/rasp/pip.jpg){:#pip}
+
+
+### Ressources:
+[jenkins](https://ci.inria.fr/pharo-contribution/view/ARM/)
+

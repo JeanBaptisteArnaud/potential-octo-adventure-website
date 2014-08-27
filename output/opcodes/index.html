@@ -1,0 +1,750 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Arnaud Jean Baptiste - </title>
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
+    <meta name="generator" content="nanoc 3.1.8">
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23169616-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	  
+	</script>
+	  
+	<script type"text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type"text/javascript" src="/scripts/jquery.easing.1.3.js"></script>
+	<script type"text/javascript" src="/scripts/slides.jquery.js"></script>
+	<script type"text/javascript">
+	    $(function(){
+	        $('.slides.bare').slides({
+	            randomize: true,
+	            play: 30000,
+	            hoverPause: true,
+	            bigTarget: true,
+	            generatePagination: false,
+	            effect: 'fade',
+	            fadeSpeed: 1000,
+	            fadeEasing: 'easeInOutSine',
+	            crossfade: true
+	        });
+	    });
+	</script>
+	
+	
+  </head>
+  <body>
+    <div id="main">
+      
+<p>Here is the standard opcodes table for the Zilog80 (Gameboy version):
+(Should be colorised “one day” when I will have a cool and clear color setup)</p>
+
+<div class="opcodes">
+<table>
+<thead><tr>
+<th></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="first">0x</td>
+    <td class="nil">No Operation: NOP</td>
+    <td class="load">Load the next 16-bit into BC: LD BC,nn</td>
+    <td class="load">Load A to address pointed by BC: LD (BC),A</td>
+    <td class="inc">Increment 16-bit BC: INC BC</td>
+    <td class="inc">Increment B: INC B</td>
+    <td class="dec">Decrement B: DEC B</td>
+    <td class="load">Load 8-bit immediate into B: LD B,n</td>
+    <td class="rotate">Rotate A left with carry: RLC A</td>
+    <td class="load">Load SP to given address: LD (nn),SP</td>
+    <td class="add">Add 16-bit BC to HL: ADD HL,BC</td>
+    <td class="load">Load A from address pointed to by BC: LD A,(BC)</td>
+    <td class="dec">Decrement 16-bit BC: DEC BC</td>
+    <td class="inc">Increment C: INC C</td>
+    <td class="dec">Decrement C: DEC C</td>
+    <td class="load">Load 8-bit immediate into C: LD C,n</td>
+    <td class="nil">Rotate A right with carry: RRC A</td>
+   </tr>
+<tr>
+<td class="first">1x</td>
+    <td class="nil">Stop processor: STOP</td>
+    <td class="load">Load 16-bit immediate into DE: LD DE,nn</td>
+    <td class="load">Load A to address pointed by DE: LD (DE),A</td>
+    <td class="inc">Increment 16-bit DE: INC DE</td>
+    <td class="inc">Increment D: INC D</td>
+    <td class="dec">Decrement D: DEC D</td>
+    <td class="load">Load 8-bit immediate into D: LD D,n</td>
+    <td class="rotate">Rotate A left: RL A</td>
+    <td class="jump">Relative jump by signed immediate: JR n</td>
+    <td class="add">Add 16-bit DE to HL: ADD HL,DE</td>
+    <td class="load">Load A from address pointed to by DE: LD A,(DE)</td>
+    <td class="dec">Decrement 16-bit DE: DEC DE</td>
+    <td class="inc">Increment E: INC E</td>
+    <td class="dec">Decrement E: DEC E</td>
+    <td class="load">Load 8-bit immediate into E: LD E,n</td>
+    <td class="rotate">Rotate A right: RR A</td>
+   </tr>
+<tr>
+<td class="first">2x</td>
+    <td class="jump">Relative jump by signed immediate if last result was not zero: JR NZ,n</td>
+    <td class="load">Load 16-bit immediate into HL: LD HL,nn</td>
+    <td class="load">Save A to address pointed by HL, and increment HL: LDI (HL),A</td>
+    <td class="inc">Increment 16-bit HL: INC HL</td>
+    <td class="inc">Increment H: INC H</td>
+    <td class="dec">Decrement H: DEC H</td>
+    <td class="load">Load 8-bit immediate into H: LD H,n</td>
+    <td class="nil">Adjust A for BCD addition: DAA</td>
+    <td class="jump">Relative jump by signed immediate if last result was zero: JR Z,n</td>
+    <td class="add">Add 16-bit HL to HL: ADD HL,HL</td>
+    <td class="load">Load A from address pointed to by HL, and increment HL: LDI A,(HL)</td>
+    <td class="dec">Decrement 16-bit HL: DEC HL</td>
+    <td class="inc">Increment L: INC L</td>
+    <td class="dec">Decrement L: DEC L</td>
+    <td class="load">Load 8-bit immediate into L: LD L,n</td>
+    <td class="nil">Complement (logical NOT) on A: CPL</td>
+   </tr>
+<tr>
+<td class="first">3x</td>
+    <td class="jump">Relative jump by signed immediate if last result caused no carry: JR NC,n</td>
+    <td class="load">Load 16-bit immediate into SP: LD SP,nn</td>
+    <td class="load">Load A to address pointed by HL, and decrement HL: LDD (HL),A</td>
+    <td class="inc">Increment 16-bit HL: INC SP</td>
+    <td class="inc">Increment value pointed by HL: INC (HL)</td>
+    <td class="dec">Decrement value pointed by HL: DEC (HL)</td>
+    <td class="load">Load 8-bit immediate into address pointed by HL: LD (HL),n</td>
+    <td class="nil">Set carry flag: SCF</td>
+    <td class="jump">Relative jump by signed immediate if last result caused carry: JR C,n</td>
+    <td class="add">Add 16-bit SP to HL: ADD HL,SP</td>
+    <td class="load">Load A from address pointed to by HL, and decrement HL: LDD A,(HL)</td>
+    <td class="dec">Decrement 16-bit SP: DEC SP</td>
+    <td class="inc">Increment A: INC A</td>
+    <td class="dec">Decrement A: DEC A</td>
+    <td class="load">Load 8-bit immediate into A: LD A,n</td>
+    <td class="nil">Clear carry flag: CCF</td>
+   </tr>
+<tr>
+<td class="first">4x</td>
+    <td class="load">Load B to B: LD B,B</td>
+    <td class="load">Load C to B: LD B,C</td>
+    <td class="load">Load D to B: LD B,D</td>
+    <td class="load">Load E to B: LD B,E</td>
+    <td class="load">Load H to B: LD B,H</td>
+    <td class="load">Load L to B: LD B,L</td>
+    <td class="load">Load value pointed by HL to B: LD B,(HL)</td>
+    <td class="load">Load A to B: LD B,A</td>
+    <td class="load">Load B to C: LD C,B</td>
+    <td class="load">Load C to C: LD C,C</td>
+    <td class="load">Load D to C: LD C,D</td>
+    <td class="load">Load E to C: LD C,E</td>
+    <td class="load">Load H to C: LD C,H</td>
+    <td class="load">Load L to C: LD C,L</td>
+    <td class="load">Load value pointed by HL to C: LD C,(HL)</td>
+    <td class="load">Load A to C: LD C,A</td>
+   </tr>
+<tr>
+<td class="first">5x</td>
+    <td class="load">Load B to D: LD D,B</td>
+    <td class="load">Load C to D: LD D,C</td>
+    <td class="load">Load D to D: LD D,D</td>
+    <td class="load">Load E to D: LD D,E</td>
+    <td class="load">Load H to D: LD D,H</td>
+    <td class="load">Load L to D: LD D,L</td>
+    <td class="load">Load value pointed by HL to D: LD D,(HL)</td>
+    <td class="load">Load A to D: LD D,A</td>
+    <td class="load">Load B to E: LD E,B</td>
+    <td class="load">Load C to E: LD E,C</td>
+    <td class="load">Load D to E: LD E,D</td>
+    <td class="load">Load E to E: LD E,E</td>
+    <td class="load">Load H to E: LD E,H</td>
+    <td class="load">Load L to E: LD E,L</td>
+    <td class="load">Load value pointed by HL to E: LD E,(HL)</td>
+    <td class="load">Load A to E: LD E,A</td>
+   </tr>
+<tr>
+<td class="first">6x</td>
+    <td class="load">Load B to H: LD H,B</td>
+    <td class="load">Load C to H: LD H,C</td>
+    <td class="load">Load D to H: LD H,D</td>
+    <td class="load">Load E to H: LD H,E</td>
+    <td class="load">Load H to H: LD H,H</td>
+    <td class="load">Load L to H: LD H,L</td>
+    <td class="load">Load value pointed by HL to H: LD H,(HL)</td>
+    <td class="load">Load A to H: LD H,A</td>
+    <td class="load">Load B to L: LD L,B</td>
+    <td class="load">Load C to L: LD L,C</td>
+    <td class="load">Load D to L: LD L,D</td>
+    <td class="load">Load E to L: LD L,E</td>
+    <td class="load">Load H to L: LD L,H</td>
+    <td class="load">Load L to L: LD L,L</td>
+    <td class="load">Load value pointed by HL to L: LD L,(HL)</td>
+    <td class="load">Load A to L: LD L,A</td>
+   </tr>
+<tr>
+<td class="first">7x</td>
+    <td class="load">Load B to address pointed by HL: LD (HL),B</td>
+    <td class="load">Load C to address pointed by HL: LD (HL),C</td>
+    <td class="load">Load D to address pointed by HL: LD (HL),D</td>
+    <td class="load">Load E to address pointed by HL: LD (HL),E</td>
+    <td class="load">Load H to address pointed by HL: LD (HL),H</td>
+    <td class="load">Load L to address pointed by HL: LD (HL),L</td>
+    <td class="nil">Halt processor: HALT</td>
+    <td class="load">Load A to address pointed by HL: LD (HL),A</td>
+    <td class="load">Load B to A: LD A,B</td>
+    <td class="load">Load C to A: LD A,C</td>
+    <td class="load">Load D to A: LD A,D</td>
+    <td class="load">Load E to A: LD A,E</td>
+    <td class="load">Load H to A: LD A,H</td>
+    <td class="load">Load L to A: LD A,L</td>
+    <td class="load">Load value pointed by HL to A: LD A,(HL)</td>
+    <td class="load">Load A to A: LD A,A</td>
+   </tr>
+<tr>
+<td class="first">8x</td>
+    <td class="add">Add B to A: ADD A,B</td>
+    <td class="add">Add C to A: ADD A,C</td>
+    <td class="add">Add D to A: ADD A,D</td>
+    <td class="add">Add E to A: ADD A,E</td>
+    <td class="add">Add H to A: ADD A,H</td>
+    <td class="add">Add L to A: ADD A,L</td>
+    <td class="add">Add value pointed by HL to A: ADD A,(HL)</td>
+    <td class="add">Add A to A: ADD A,A</td>
+    <td class="add">Add B and carry flag to A: ADC A,B</td>
+    <td class="add">Add C and carry flag to A: ADC A,C</td>
+    <td class="add">Add D and carry flag to A: ADC A,D</td>
+    <td class="add">Add E and carry flag to A: ADC A,E</td>
+    <td class="add">Add H and carry flag to A: ADC A,H</td>
+    <td class="add">Add and carry flag L to A: ADC A,L</td>
+    <td class="add">Add value pointed by HL and carry flag to A: ADC A,(HL)</td>
+    <td class="add">Add A and carry flag to A: ADC A,A</td>
+   </tr>
+<tr>
+<td class="first">9x</td>
+    <td class="sub">Subtract B from A: SUB A,B</td>
+    <td class="sub">Subtract C from A: SUB A,C</td>
+    <td class="sub">Subtract D from A: SUB A,D</td>
+    <td class="sub">Subtract E from A: SUB A,E</td>
+    <td class="sub">Subtract H from A: SUB A,H</td>
+    <td class="sub">Subtract L from A: SUB A,L</td>
+    <td class="sub">Subtract value pointed by HL from A: SUB A,(HL)</td>
+    <td class="sub">Subtract A from A: SUB A,A</td>
+    <td class="sub">Subtract B and carry flag from A: SBC A,B</td>
+    <td class="sub">Subtract C and carry flag from A: SBC A,C</td>
+    <td class="sub">Subtract D and carry flag from A: SBC A,D</td>
+    <td class="sub">Subtract E and carry flag from A: SBC A,E</td>
+    <td class="sub">Subtract H and carry flag from A: SBC A,H</td>
+    <td class="sub">Subtract and carry flag L from A: SBC A,L</td>
+    <td class="sub">Subtract value pointed by HL and carry flag from A: SBC A,(HL)</td>
+    <td class="sub">Subtract A and carry flag from A: SBC A,A</td>
+   </tr>
+<tr>
+<td class="first">Ax</td>
+    <td class="and">Logical AND B with A: AND B</td>
+    <td class="and">Logical AND C with A: AND C</td>
+    <td class="and">Logical AND D with A: AND D</td>
+    <td class="and">Logical AND E with A: AND E</td>
+    <td class="and">Logical AND H with A: AND H</td>
+    <td class="and">Logical AND L with A: AND L</td>
+    <td class="and">Logical AND value pointed by HL with A: AND (HL)</td>
+    <td class="and">Logical AND A with A: AND A</td>
+    <td class="xor">Logical XOR B with A: XOR B</td>
+    <td class="xor">Logical XOR C with A: XOR C</td>
+    <td class="xor">Logical XOR D with A: XOR D</td>
+    <td class="xor">Logical XOR E with A: XOR E</td>
+    <td class="xor">Logical XOR H with A: XOR H</td>
+    <td class="xor">Logical XOR L with A: XOR L</td>
+    <td class="xor">Logical XOR value pointed by HL with A: XOR (HL)</td>
+    <td class="xor">Logical XOR A with A: XOR A</td>
+   </tr>
+<tr>
+<td class="first">Bx</td>
+    <td class="or">Logical OR B with A: OR B</td>
+    <td class="or">Logical OR C with A: OR C</td>
+    <td class="or">Logical OR D with A: OR D</td>
+    <td class="or">Logical OR E with A: OR E</td>
+    <td class="or">Logical OR H with A: OR H</td>
+    <td class="or">Logical OR L with A: OR L</td>
+    <td class="or">Logical OR value pointed by HL with A: OR (HL)</td>
+    <td class="or">Logical OR A with A: OR A</td>
+    <td class="cp">Compare B with A: CP B</td>
+    <td class="cp">Compare C with A: CP C</td>
+    <td class="cp">Compare D with A: CP D</td>
+    <td class="cp">Compare E with A: CP E</td>
+    <td class="cp">Compare H with A: CP H</td>
+    <td class="cp">Compare L with A: CP L</td>
+    <td class="cp">Compare value pointed by HL with A: CP (HL)</td>
+    <td class="cp">Compare A with A: CP A</td>
+   </tr>
+<tr>
+<td class="first">Cx</td>
+    <td class="ret">Return if last result was not zero: RET NZ</td>
+    <td class="pop">Pop 16-bit value from stack into BC: POP BC</td>
+    <td class="jump">Absolute jump to 16-bit location if last result was not zero: JP NZ,nn</td>
+    <td class="jump">Absolute jump to 16-bit location: JP nn</td>
+    <td class="call">Call routine at 16-bit location if last result was not zero: CALL NZ,nn</td>
+    <td class="push">Push 16-bit BC onto stack: PUSH BC</td>
+    <td class="add">Add 8-bit immediate to A: ADD A,n</td>
+    <td class="rst">Call routine at address 0000h: RST 0</td>
+    <td class="ret">Return if last result was zero: RET Z</td>
+    <td class="ret">Return to calling routine: RET</td>
+    <td class="jump">Absolute jump to 16-bit location if last result was zero: JP Z,nn</td>
+    <td class="NEXT">Extended operations (two-byte instruction code): Ext ops</td>
+    <td class="call">Call routine at 16-bit location if last result was zero: CALL Z,nn</td>
+    <td class="call">Call routine at 16-bit location: CALL nn</td>
+    <td class="add">Add 8-bit immediate and carry to A: ADC A,n</td>
+    <td class="rst">Call routine at address 0008h: RST 8</td>
+   </tr>
+<tr>
+<td class="first">Dx</td>
+    <td class="ret">Return if last result caused no carry: RET NC</td>
+    <td class="pop">Pop 16-bit value from stack into DE: POP DE</td>
+    <td class="jp">Absolute jump to 16-bit location if last result caused no carry: JP NC,nn</td>
+    <td class="nil">Operation removed in this CPU: XX</td>
+    <td class="call">Call routine at 16-bit location if last result caused no carry: CALL NC,nn</td>
+    <td class="push">Push 16-bit DE onto stack: PUSH DE</td>
+    <td class="sub">Subtract 8-bit immediate from A: SUB A,n</td>
+    <td class="rst">Call routine at address 0010h: RST 10</td>
+    <td class="ret">Return if last result caused carry: RET C</td>
+    <td class="nil">Enable interrupts and return to calling routine: RETI</td>
+    <td class="jump">Absolute jump to 16-bit location if last result caused carry: JP C,nn</td>
+    <td class="nil">Operation removed in this CPU: XX</td>
+    <td class="call">Call routine at 16-bit location if last result caused carry: CALL C,nn</td>
+    <td class="nil">Operation removed in this CPU: XX</td>
+    <td class="sub">Subtract 8-bit immediate and carry from A: SBC A,n</td>
+    <td class="rst">Call routine at address 0018h: RST 18</td>
+   </tr>
+<tr>
+<td class="first">Ex</td>
+    <td class="load">Load A at address pointed to by (FF00h + 8-bit immediate): LDH (n),A</td>
+    <td class="pop">Pop 16-bit value from stack into HL: POP HL</td>
+    <td class="load">Load A at address pointed to by (FF00h + C): LDH (C),A</td>
+    <td class="nil">Operation removed in this CPU: XX</td>
+    <td class="nil">Operation removed in this CPU: XX</td>
+    <td class="push">Push 16-bit HL onto stack: PUSH HL</td>
+    <td class="and">Logical AND 8-bit immediate with A: AND n</td>
+    <td class="rst">Call routine at address 0020h: RST 20</td>
+    <td class="add">Add signed 8-bit immediate to SP: ADD SP,d</td>
+    <td class="jump">Jump to 16-bit value pointed by HL: JP (HL)</td>
+    <td class="load">Load A at given 16-bit address: LD (nn),A</td>
+    <td class="nil">Operation removed in this CPU: XX</td>
+    <td class="nil">Operation removed in this CPU: XX</td>
+    <td class="nil">Operation removed in this CPU: XX</td>
+    <td class="xor">Logical XOR 8-bit immediate with A: XOR n</td>
+    <td class="rst">Call routine at address 0028h: RST 28</td>
+   </tr>
+<tr>
+<td class="first">Fx</td>
+    <td class="load">Load A from address pointed to by (FF00h + 8-bit immediate): LDH A,(n)</td>
+    <td class="pop">Pop 16-bit value from stack into AF: POP AF</td>
+    <td class="nil">Operation removed in this CPU: XX</td>
+    <td class="nil">DIsable interrupts: DI</td>
+    <td class="nil">Operation removed in this CPU: XX</td>
+    <td class="push">Push 16-bit AF onto stack: PUSH AF</td>
+    <td class="or">Logical OR 8-bit immediate with A: OR n</td>
+    <td class="rst">Call routine at address 0030h: RST 30</td>
+    <td class="load">Add signed 8-bit immediate to SP and save result in HL: LDHL SP,d</td>
+    <td class="load">Load HL to SP: LD SP,HL</td>
+    <td class="load">Load A from given 16-bit address: LD A,(nn)</td>
+    <td class="nil">Enable interrupts: EI</td>
+    <td class="nil">Operation removed in this CPU: XX</td>
+    <td class="nil">Operation removed in this CPU: XX</td>
+    <td class="cp">Compare 8-bit immediate with A: CP n</td>
+    <td class="rst">Call routine at address 0038h: RST 38</td>
+   </tr>
+</tbody>
+</table>
+</div>
+
+<p>Here is the extended byteCode table for the Zilog80 (using the opcode: CP) (Gameboy version):</p>
+
+<div class="opcodes"> <table>
+<thead><tr>
+<th></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>F</th>
+</tr></thead>
+<tbody>
+<tr>
+<td class="first">0x</td>
+    <td class="rotate">Rotate B left with carry: RLC B</td>
+    <td class="rotate">Rotate C left with carry: RLC C</td>
+    <td class="rotate">Rotate D left with carry: RLC D</td>
+    <td class="rotate">Rotate E left with carry: RLC E</td>
+    <td class="rotate">Rotate H left with carry: RLC H</td>
+    <td class="rotate">Rotate L left with carry: RLC L</td>
+    <td class="rotate">Rotate value pointed by HL left with carry: RLC (HL)</td>
+    <td class="rotate">Rotate A left with carry: RLC A</td>
+    <td class="rotate">Rotate B right with carry: RRC B</td>
+    <td class="rotate">Rotate C right with carry: RRC C</td>
+    <td class="rotate">Rotate D right with carry: RRC D</td>
+    <td class="rotate">Rotate E right with carry: RRC E</td>
+    <td class="rotate">Rotate H right with carry: RRC H</td>
+    <td class="rotate">Rotate L right with carry: RRC L</td>
+    <td class="rotate">Rotate value pointed by HL right with carry: RRC (HL)</td>
+    <td class="rotate">Rotate A right with carry: RRC A</td>
+   </tr>
+<tr>
+<td class="first">1x</td>
+    <td class="rotate">Rotate B left: RL B</td>
+    <td class="rotate">Rotate C left: RL C</td>
+    <td class="rotate">Rotate D left: RL D</td>
+    <td class="rotate">Rotate E left: RL E</td>
+    <td class="rotate">Rotate H left: RL H</td>
+    <td class="rotate">Rotate L left: RL L</td>
+    <td class="rotate">Rotate value pointed by HL left: RL (HL)</td>
+    <td class="rotate">Rotate A left: RL A</td>
+    <td class="rotate">Rotate B right: RR B</td>
+    <td class="rotate">Rotate C right: RR C</td>
+    <td class="rotate">Rotate D right: RR D</td>
+    <td class="rotate">Rotate E right: RR E</td>
+    <td class="rotate">Rotate H right: RR H</td>
+    <td class="rotate">Rotate L right: RR L</td>
+    <td class="rotate">Rotate value pointed by HL right: RR (HL)</td>
+    <td class="rotate">Rotate A right: RR A</td>
+   </tr>
+<tr>
+<td class="first">2x</td>
+    <td class="shift">Shift B left preserving sign: SLA B</td>
+    <td class="shift">Shift C left preserving sign: SLA C</td>
+    <td class="shift">Shift D left preserving sign: SLA D</td>
+    <td class="shift">Shift E left preserving sign: SLA E</td>
+    <td class="shift">Shift H left preserving sign: SLA H</td>
+    <td class="shift">Shift L left preserving sign: SLA L</td>
+    <td class="shift">Shift value pointed by HL left preserving sign: SLA (HL)</td>
+    <td class="shift">Shift A left preserving sign: SLA A</td>
+    <td class="shift">Shift B right preserving sign: SRA B</td>
+    <td class="shift">Shift C right preserving sign: SRA C</td>
+    <td class="shift">Shift D right preserving sign: SRA D</td>
+    <td class="shift">Shift E right preserving sign: SRA E</td>
+    <td class="shift">Shift H right preserving sign: SRA H</td>
+    <td class="shift">Shift L right preserving sign: SRA L</td>
+    <td class="shift">Shift value pointed by HL right preserving sign: SRA (HL)</td>
+    <td class="shift">Shift A right preserving sign: SRA A</td>
+   </tr>
+<tr>
+<td>3x</td>
+    <td class="swap">Swap nybbles in B: SWAP B</td>
+    <td class="swap">Swap nybbles in C: SWAP C</td>
+    <td class="swap">Swap nybbles in D: SWAP D</td>
+    <td class="swap">Swap nybbles in E: SWAP E</td>
+    <td class="swap">Swap nybbles in H: SWAP H</td>
+    <td class="swap">Swap nybbles in L: SWAP L</td>
+    <td class="swap">Swap nybbles in value pointed by HL: SWAP (HL)</td>
+    <td class="swap">Swap nybbles in A: SWAP A</td>
+    <td class="shift">Shift B right: SRL B</td>
+    <td class="shift">Shift C right: SRL C</td>
+    <td class="shift">Shift D right: SRL D</td>
+    <td class="shift">Shift E right: SRL E</td>
+    <td class="shift">Shift H right: SRL H</td>
+    <td class="shift">Shift L right: SRL L</td>
+    <td class="shift">Shift value pointed by HL right: SRL (HL)</td>
+    <td class="shift">Shift A right: SRL A</td>
+   </tr>
+<tr>
+<td>4x</td>
+    <td class="test">Test bit 0 of B: BIT 0,B</td>
+    <td class="test">Test bit 0 of C: BIT 0,C</td>
+    <td class="test">Test bit 0 of D: BIT 0,D</td>
+    <td class="test">Test bit 0 of E: BIT 0,E</td>
+    <td class="test">Test bit 0 of H: BIT 0,H</td>
+    <td class="test">Test bit 0 of L: BIT 0,L</td>
+    <td class="test">Test bit 0 of value pointed by HL: BIT 0,(HL)</td>
+    <td class="test">Test bit 0 of A: BIT 0,A</td>
+    <td class="test">Test bit 1 of B: BIT 1,B</td>
+    <td class="test">Test bit 1 of C: BIT 1,C</td>
+    <td class="test">Test bit 1 of D: BIT 1,D</td>
+    <td class="test">Test bit 1 of E: BIT 1,E</td>
+    <td class="test">Test bit 1 of H: BIT 1,H</td>
+    <td class="test">Test bit 1 of L: BIT 1,L</td>
+    <td class="test">Test bit 1 of value pointed by HL: BIT 1,(HL)</td>
+    <td class="test">Test bit 1 of A: BIT 1,A</td>
+   </tr>
+<tr>
+<td>5x</td>
+    <td class="test">Test bit 2 of B: BIT 2,B</td>
+    <td class="test">Test bit 2 of C: BIT 2,C</td>
+    <td class="test">Test bit 2 of D: BIT 2,D</td>
+    <td class="test">Test bit 2 of E: BIT 2,E</td>
+    <td class="test">Test bit 2 of H: BIT 2,H</td>
+    <td class="test">Test bit 2 of L: BIT 2,L</td>
+    <td class="test">Test bit 2 of value pointed by HL: BIT 2,(HL)</td>
+    <td class="test">Test bit 2 of A: BIT 2,A</td>
+    <td class="test">Test bit 3 of B: BIT 3,B</td>
+    <td class="test">Test bit 3 of C: BIT 3,C</td>
+    <td class="test">Test bit 3 of D: BIT 3,D</td>
+    <td class="test">Test bit 3 of E: BIT 3,E</td>
+    <td class="test">Test bit 3 of H: BIT 3,H</td>
+    <td class="test">Test bit 3 of L: BIT 3,L</td>
+    <td class="test">Test bit 3 of value pointed by HL: BIT 3,(HL)</td>
+    <td class="test">Test bit 3 of A: BIT 3,A</td>
+   </tr>
+<tr>
+<td>6x</td>
+    <td class="test">Test bit 4 of B: BIT 4,B</td>
+    <td class="test">Test bit 4 of C: BIT 4,C</td>
+    <td class="test">Test bit 4 of D: BIT 4,D</td>
+    <td class="test">Test bit 4 of E: BIT 4,E</td>
+    <td class="test">Test bit 4 of H: BIT 4,H</td>
+    <td class="test">Test bit 4 of L: BIT 4,L</td>
+    <td class="test">Test bit 4 of value pointed by HL: BIT 4,(HL)</td>
+    <td class="test">Test bit 4 of A: BIT 4,A</td>
+    <td class="test">Test bit 5 of B: BIT 5,B</td>
+    <td class="test">Test bit 5 of C: BIT 5,C</td>
+    <td class="test">Test bit 5 of D: BIT 5,D</td>
+    <td class="test">Test bit 5 of E: BIT 5,E</td>
+    <td class="test">Test bit 5 of H: BIT 5,H</td>
+    <td class="test">Test bit 5 of L: BIT 5,L</td>
+    <td class="test">Test bit 5 of value pointed by HL: BIT 5,(HL)</td>
+    <td class="test">Test bit 5 of A: BIT 5,A</td>
+   </tr>
+<tr>
+<td>7x</td>
+    <td class="test">Test bit 6 of B: BIT 6,B</td>
+    <td class="test">Test bit 6 of C: BIT 6,C</td>
+    <td class="test">Test bit 6 of D: BIT 6,D</td>
+    <td class="test">Test bit 6 of E: BIT 6,E</td>
+    <td class="test">Test bit 6 of H: BIT 6,H</td>
+    <td class="test">Test bit 6 of L: BIT 6,L</td>
+    <td class="test">Test bit 6 of value pointed by HL: BIT 6,(HL)</td>
+    <td class="test">Test bit 6 of A: BIT 6,A</td>
+    <td class="test">Test bit 7 of B: BIT 7,B</td>
+    <td class="test">Test bit 7 of C: BIT 7,C</td>
+    <td class="test">Test bit 7 of D: BIT 7,D</td>
+    <td class="test">Test bit 7 of E: BIT 7,E</td>
+    <td class="test">Test bit 7 of H: BIT 7,H</td>
+    <td class="test">Test bit 7 of L: BIT 7,L</td>
+    <td class="test">Test bit 7 of value pointed by HL: BIT 7,(HL)</td>
+    <td class="test">Test bit 7 of A: BIT 7,A</td>
+   </tr>
+<tr>
+<td>8x</td>
+    <td class="clear">Clear (reset) bit 0 of B: RES 0,B</td>
+    <td class="clear">Clear (reset) bit 0 of C: RES 0,C</td>
+    <td class="clear">Clear (reset) bit 0 of D: RES 0,D</td>
+    <td class="clear">Clear (reset) bit 0 of E: RES 0,E</td>
+    <td class="clear">Clear (reset) bit 0 of H: RES 0,H</td>
+    <td class="clear">Clear (reset) bit 0 of L: RES 0,L</td>
+    <td class="clear">Clear (reset) bit 0 of value pointed by HL: RES 0,(HL)</td>
+    <td class="clear">Clear (reset) bit 0 of A: RES 0,A</td>
+    <td class="clear">Clear (reset) bit 1 of B: RES 1,B</td>
+    <td class="clear">Clear (reset) bit 1 of C: RES 1,C</td>
+    <td class="clear">Clear (reset) bit 1 of D: RES 1,D</td>
+    <td class="clear">Clear (reset) bit 1 of E: RES 1,E</td>
+    <td class="clear">Clear (reset) bit 1 of H: RES 1,H</td>
+    <td class="clear">Clear (reset) bit 1 of L: RES 1,L</td>
+    <td class="clear">Clear (reset) bit 1 of value pointed by HL: RES 1,(HL)</td>
+    <td class="clear">Clear (reset) bit 1 of A: RES 1,A</td>
+   </tr>
+<tr>
+<td>9x</td>
+    <td class="clear">Clear (reset) bit 2 of B: RES 2,B</td>
+    <td class="clear">Clear (reset) bit 2 of C: RES 2,C</td>
+    <td class="clear">Clear (reset) bit 2 of D: RES 2,D</td>
+    <td class="clear">Clear (reset) bit 2 of E: RES 2,E</td>
+    <td class="clear">Clear (reset) bit 2 of H: RES 2,H</td>
+    <td class="clear">Clear (reset) bit 2 of L: RES 2,L</td>
+    <td class="clear">Clear (reset) bit 2 of value pointed by HL: RES 2,(HL)</td>
+    <td class="clear">Clear (reset) bit 2 of A: RES 2,A</td>
+    <td class="clear">Clear (reset) bit 3 of B: RES 3,B</td>
+    <td class="clear">Clear (reset) bit 3 of C: RES 3,C</td>
+    <td class="clear">Clear (reset) bit 3 of D: RES 3,D</td>
+    <td class="clear">Clear (reset) bit 3 of E: RES 3,E</td>
+    <td class="clear">Clear (reset) bit 3 of H: RES 3,H</td>
+    <td class="clear">Clear (reset) bit 3 of L: RES 3,L</td>
+    <td class="clear">Clear (reset) bit 3 of value pointed by HL: RES 3,(HL)</td>
+    <td class="clear">Clear (reset) bit 3 of A: RES 3,A</td>
+   </tr>
+<tr>
+<td>Ax</td>
+    <td class="clear">Clear (reset) bit 4 of B: RES 4,B</td>
+    <td class="clear">Clear (reset) bit 4 of C: RES 4,C</td>
+    <td class="clear">Clear (reset) bit 4 of D: RES 4,D</td>
+    <td class="clear">Clear (reset) bit 4 of E: RES 4,E</td>
+    <td class="clear">Clear (reset) bit 4 of H: RES 4,H</td>
+    <td class="clear">Clear (reset) bit 4 of L: RES 4,L</td>
+    <td class="clear">Clear (reset) bit 4 of value pointed by HL: RES 4,(HL)</td>
+    <td class="clear">Clear (reset) bit 4 of A: RES 4,A</td>
+    <td class="clear">Clear (reset) bit 5 of B: RES 5,B</td>
+    <td class="clear">Clear (reset) bit 5 of C: RES 5,C</td>
+    <td class="clear">Clear (reset) bit 5 of D: RES 5,D</td>
+    <td class="clear">Clear (reset) bit 5 of E: RES 5,E</td>
+    <td class="clear">Clear (reset) bit 5 of H: RES 5,H</td>
+    <td class="clear">Clear (reset) bit 5 of L: RES 5,L</td>
+    <td class="clear">Clear (reset) bit 5 of value pointed by HL: RES 5,(HL)</td>
+    <td class="clear">Clear (reset) bit 5 of A: RES 5,A</td>
+   </tr>
+<tr>
+<td>Bx</td>
+    <td class="clear">Clear (reset) bit 6 of B: RES 6,B</td>
+    <td class="clear">Clear (reset) bit 6 of C: RES 6,C</td>
+    <td class="clear">Clear (reset) bit 6 of D: RES 6,D</td>
+    <td class="clear">Clear (reset) bit 6 of E: RES 6,E</td>
+    <td class="clear">Clear (reset) bit 6 of H: RES 6,H</td>
+    <td class="clear">Clear (reset) bit 6 of L: RES 6,L</td>
+    <td class="clear">Clear (reset) bit 6 of value pointed by HL: RES 6,(HL)</td>
+    <td class="clear">Clear (reset) bit 6 of A: RES 6,A</td>
+    <td class="clear">Clear (reset) bit 7 of B: RES 7,B</td>
+    <td class="clear">Clear (reset) bit 7 of C: RES 7,C</td>
+    <td class="clear">Clear (reset) bit 7 of D: RES 7,D</td>
+    <td class="clear">Clear (reset) bit 7 of E: RES 7,E</td>
+    <td class="clear">Clear (reset) bit 7 of H: RES 7,H</td>
+    <td class="clear">Clear (reset) bit 7 of L: RES 7,L</td>
+    <td class="clear">Clear (reset) bit 7 of value pointed by HL: RES 7,(HL)</td>
+    <td class="clear">Clear (reset) bit 7 of A: RES 7,A</td>
+   </tr>
+<tr>
+<td>Cx</td>
+    <td class="set">Set bit 0 of B: SET 0,B</td>
+    <td class="set">Set bit 0 of C: SET 0,C</td>
+    <td class="set">Set bit 0 of D: SET 0,D</td>
+    <td class="set">Set bit 0 of E: SET 0,E</td>
+    <td class="set">Set bit 0 of H: SET 0,H</td>
+    <td class="set">Set bit 0 of L: SET 0,L</td>
+    <td class="set">Set bit 0 of value pointed by HL: SET 0,(HL)</td>
+    <td class="set">Set bit 0 of A: SET 0,A</td>
+    <td class="set">Set bit 1 of B: SET 1,B</td>
+    <td class="set">Set bit 1 of C: SET 1,C</td>
+    <td class="set">Set bit 1 of D: SET 1,D</td>
+    <td class="set">Set bit 1 of E: SET 1,E</td>
+    <td class="set">Set bit 1 of H: SET 1,H</td>
+    <td class="set">Set bit 1 of L: SET 1,L</td>
+    <td class="set">Set bit 1 of value pointed by HL: SET 1,(HL)</td>
+    <td class="set">Set bit 1 of A: SET 1,A</td>
+   </tr>
+<tr>
+<td>Dx</td>
+    <td class="set">Set bit 2 of B: SET 2,B</td>
+    <td class="set">Set bit 2 of C: SET 2,C</td>
+    <td class="set">Set bit 2 of D: SET 2,D</td>
+    <td class="set">Set bit 2 of E: SET 2,E</td>
+    <td class="set">Set bit 2 of H: SET 2,H</td>
+    <td class="set">Set bit 2 of L: SET 2,L</td>
+    <td class="set">Set bit 2 of value pointed by HL: SET 2,(HL)</td>
+    <td class="set">Set bit 2 of A: SET 2,A</td>
+    <td class="set">Set bit 3 of B: SET 3,B</td>
+    <td class="set">Set bit 3 of C: SET 3,C</td>
+    <td class="set">Set bit 3 of D: SET 3,D</td>
+    <td class="set">Set bit 3 of E: SET 3,E</td>
+    <td class="set">Set bit 3 of H: SET 3,H</td>
+    <td class="set">Set bit 3 of L: SET 3,L</td>
+    <td class="set">Set bit 3 of value pointed by HL: SET 3,(HL)</td>
+    <td class="set">Set bit 3 of A: SET 3,A</td>
+   </tr>
+<tr>
+<td>Ex</td>
+    <td class="set">Set bit 4 of B: SET 4,B</td>
+    <td class="set">Set bit 4 of C: SET 4,C</td>
+    <td class="set">Set bit 4 of D: SET 4,D</td>
+    <td class="set">Set bit 4 of E: SET 4,E</td>
+    <td class="set">Set bit 4 of H: SET 4,H</td>
+    <td class="set">Set bit 4 of L: SET 4,L</td>
+    <td class="set">Set bit 4 of value pointed by HL: SET 4,(HL)</td>
+    <td class="set">Set bit 4 of A: SET 4,A</td>
+    <td class="set">Set bit 5 of B: SET 5,B</td>
+    <td class="set">Set bit 5 of C: SET 5,C</td>
+    <td class="set">Set bit 5 of D: SET 5,D</td>
+    <td class="set">Set bit 5 of E: SET 5,E</td>
+    <td class="set">Set bit 5 of H: SET 5,H</td>
+    <td class="set">Set bit 5 of L: SET 5,L</td>
+    <td class="set">Set bit 5 of value pointed by HL: SET 5,(HL)</td>
+    <td class="set">Set bit 5 of A: SET 5,A</td>
+   </tr>
+<tr>
+<td>Fx</td>
+    <td class="set">Set bit 6 of B: SET 6,B</td>
+    <td class="set">Set bit 6 of C: SET 6,C</td>
+    <td class="set">Set bit 6 of D: SET 6,D</td>
+    <td class="set">Set bit 6 of E: SET 6,E</td>
+    <td class="set">Set bit 6 of H: SET 6,H</td>
+    <td class="set">Set bit 6 of L: SET 6,L</td>
+    <td class="set">Set bit 6 of value pointed by HL: SET 6,(HL)</td>
+    <td class="set">Set bit 6 of A: SET 6,A</td>
+    <td class="set">Set bit 7 of B: SET 7,B</td>
+    <td class="set">Set bit 7 of C: SET 7,C</td>
+    <td class="set">Set bit 7 of D: SET 7,D</td>
+    <td class="set">Set bit 7 of E: SET 7,E</td>
+    <td class="set">Set bit 7 of H: SET 7,H</td>
+    <td class="set">Set bit 7 of L: SET 7,L</td>
+    <td class="set">Set bit 7 of value pointed by HL: SET 7,(HL)</td>
+    <td class="set">Set bit 7 of A: SET 7,A</td>
+   </tr>
+</tbody>
+</table>
+</div>
+    </div>
+	
+    <div id="foot">
+		
+    </div>
+	
+    <div id="sidebar">
+		<div class="slides bare" id="slidesbare">
+		    <div class="slides_container" style="width:200px;height:200px">
+		        <img class='slide' src="../ressources/photoMe/photome1.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome2.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome3.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome4.jpg" alt="Random portrait" width="200"/>
+		        <img class='slide' src="../ressources/photoMe/photome5.jpg" alt="Random portrait" width="200"/>
+		    </div>
+		</div>			
+     	<ul>
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>	
+		<li><h2>Research</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/publication/">Publications</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/teaching/">Teaching</a>
+			</ol>
+		<li><h2>Languages Analysis</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/protectedsmalltalk/">Protected Smalltalk</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
+			</ol>
+			
+		<li><h2>Others Projects</h2></a>
+			<ol>
+				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on ARM</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/chipmunk/">Storm</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
+			</ol>
+      </ul>
+    </div>
+	
+  </body>
+</html>

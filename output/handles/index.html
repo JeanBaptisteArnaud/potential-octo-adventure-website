@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Arnaud Jean Baptiste - Handles</title>
-    <link rel="stylesheet" type="text/css" href="http://ssl10.ovh.net/~jeanbaptg/style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/style.css" media="screen">
     <meta name="generator" content="nanoc 3.1.8">
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
@@ -48,17 +48,21 @@
 <p>A handle is a transparent reference to a target object.
 (1) A handle can define different behavior than the target object. When the message foo is sent via the reference the handle executes its own methods using the identity and the state of the target object. If a method is not defined in the handle, but in the target, it will not be accessible to the handle client. Multiple handles can have the same target object. A target still can be accessible via a normal reference. It is the responsibility of the infrastructure built on top of handles to ensure the adequate use of properties and references. In its current version, the Handle framework does not keep the target class and its shadow synchronized automatically.</p>
 
-<p><img src="../figures/NewHandlePrinciple.jpg" alt="Handle principle" title="Handle principle" /></p>
+<p><img src="../figures/NewHandlePrinciple.jpg" alt="Handle principle" title="Handle principle"></p>
 
-<p>(2) A handle can &#8216;guard&#8217; the state of the target object, a handle can have different state than the target object. If a method try to access or change the state thought the handle, it will remains local to the handle. Obviously again, a target still can be accessible via a normal reference.</p>
+<p>(2) A handle can ‘guard’ the state of the target object, a handle can have different state than the target object. If a method try to access or change the state thought the handle, it will remains local to the handle. Obviously again, a target still can be accessible via a normal reference.</p>
 
-<p><img src="../figures/StateGuarding1.jpg" alt="State guarding" title="State guarding principle" /></p>
+<p><img src="../figures/StateGuarding1.jpg" alt="State guarding" title="State guarding principle"></p>
 
 <p>(3) One of the key aspect of the handle is the automatic propagation of the Properties. The Handle is used for define properties, such Readonly,etc.. If you define a way to automatically propagate this property(basically how to configure the handle), it will be applied automatically when the object of the subgraph will access.</p>
 
-<p><img src="../figures/newPropagationV2.jpg" alt="Propagation" title="Propagation principle" /></p>
-
+<p><img src="../figures/newPropagationV2.jpg" alt="Propagation" title="Propagation principle"></p>
     </div>
+	
+    <div id="foot">
+		
+    </div>
+	
     <div id="sidebar">
 		<div class="slides bare" id="slidesbare">
 		    <div class="slides_container" style="width:200px;height:200px">
@@ -70,8 +74,7 @@
 		    </div>
 		</div>			
      	<ul>
-		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>
-		<li><a href="http://jeanbaptiste-arnaud.eu/contact/">About Me</a>	
+		<li><a href="http://jeanbaptiste-arnaud.eu/">Home</a>	
 		<li><h2>Research</h2></a>
 			<ol>
 				<li><a href="http://jeanbaptiste-arnaud.eu/phd/">Ph.D</a>
@@ -80,9 +83,8 @@
 			</ol>
 		<li><h2>Languages Analysis</h2></a>
 			<ol>
-				<li><a href="http://jeanbaptiste-arnaud.eu/Cobol/">Cobol</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/ProtectedSmalltalk/">Protected Smalltalk</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/SafePython/">Safe Python</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/cobol/">Cobol</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/protectedsmalltalk/">Protected Smalltalk</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/MoosePython/">Moose Python</a>		
 			</ol>
 			
@@ -91,8 +93,8 @@
 				<li><a href="http://jeanbaptiste-arnaud.eu/raspberry/">Pharo on Raspberry Pi</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/opal/">OPAL compiler</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/opengl/">OpenGL</a>
+				<li><a href="http://jeanbaptiste-arnaud.eu/chipmunk/">Storm</a>
 				<li><a href="http://jeanbaptiste-arnaud.eu/gb/">Gameboy Emulator from Scratch</a>
-				<li><a href="http://jeanbaptiste-arnaud.eu/other/">Other stuff</a>
 			</ol>
       </ul>
     </div>

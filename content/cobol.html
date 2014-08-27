@@ -1,0 +1,28 @@
+--- 
+title: Cobol Island Grammar
+---
+#  Cobol Island Grammar
+This project project has been done for a company [Synectique](http://www.synectique.eu/en/). In that context I am not authorized to publish any detail of the implementation. The goal is to create a coherent [Moose](http://www.moosetechnology.org/) model for IBM* ILE* COBOL/400* language. This Moose model should be used to make quality visualization for legacies software. This project has been based on [PetitParser](http://www.moosetechnology.org/tools/petitparser).
+
+## What I do:
++ Learn the IBM* ILE* COBOL/400* language (~600 pages of a documentation). COBOL is a [non-structured language](http://en.wikipedia.org/wiki/Non-structured_programming).
++ Write more that 15 island parser (and more than 30 grammars) using petit parser.
++ Created, Used and Publish using Inria Continuous Integration Server (based on Jenkins).
++ Write functionales tests (~150 tests). I do not write unit tests. 
++ Create the moose Entities(~ 15 classes) specific to the language (Moose has been design for object-oriented languages). 
+
+## Specific Effort:
++ The language itself. This language is easy to write but a pain to parse.
++ Performances, here we speak about several million of lines of codes. So, some design has been done to raised the performance. We also generated benchmark based on the test.
++ Maintainability of my code, my parser a completly modular and can be easily change. Most of the test are present to explain the _subtility_ of the language.
+
+## Result
+The project has been declared as usable by Synectique. My parsers represent just a Island Grammar of Cobol.
+Now, Synectique Use my model to:
++ Detect dead code.
++ Draw the call tree.
++ Check the variable usages.
+
+
+## Cumulated effort: 
+	6 month.

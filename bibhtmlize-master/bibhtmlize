@@ -1,0 +1,77 @@
+#!/usr/bin/env ruby
+
+BIBSTYLE = File.join(File.dirname(__FILE__), 'htmlize')
+SEDFIX = File.join(File.dirname(__FILE__), 'fixbibtex.sed')
+AUX, BBL, BLG = %w{aux bbl blg}.collect {|e| "tmp.bibhtmlize.#{e}" }
+HTML_PRE = <<-EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <body>
+EOF
+HTML_POST = <<-EOF
+    </body>
+</html>
+EOF
+
+$verbose = false
+def message(str)
+  $stderr.puts str if $verbose
+end
+def fatal(str)
+  message str
+  exit 1
+end
+
+require 'cri'
+command = Cri::Command.define do
+  name    'bibhtmlize'
+  usage   'bibhtmlize [options] bibfile(s)'
+  summary 'Run bibtex and process its output into HTML'
+  
+  flag     :w, :wrap,  'Wrap generated html in a full page (header/footer)'
+  required :s, :style, 'BibTeX style file (defaults to plainhtml.bst)'
+  flag     :k, :keep,  'Keep intermediary files when finished'
+  flag     :v, :verbose, 'Show progress' do |value|
+    $verbose = value
+  end
+  flag     :h, :help,  'Show usage information' do |value, cmd|
+    puts cmd.help
+    exit 0
+  end
+
+  run do |opts, args, cmd|
+    if args.empty?
+      message "No bibliography files given!"
+      exit 1
+    end
+
+    begin
+      File.open(AUX, 'w') do |aux|
+        message "Generating .aux file..."
+        args.each do |each|
+          aux.puts "\\bibdata{#{each}}"
+        end
+        aux.puts "\\bibstyle{#{opts[:style] || BIBSTYLE}}"
+        aux.puts "\\citation{*}"
+      end
+
+      message "Running BibTeX..."
+      system "bibtex -terse #{AUX} >&2" || fatal('BibTeX failed')
+
+      message "Fixing up the HTML..."
+      $stdout.write(HTML_PRE) if opts[:wrap]
+      system "sed -f #{SEDFIX} #{BBL}" || fatal('sed failed')
+      $stdout.write(HTML_POST) if opts[:wrap]
+    ensure
+      unless opts[:keep]
+        message "Cleaning up..."
+        [AUX, BBL, BLG].each do |f|
+          File.delete(f) if File.file?(f)
+        end
+      end
+    end
+  end
+end
+
+command.run(ARGV) if __FILE__ == $0
