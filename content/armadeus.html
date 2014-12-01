@@ -1,0 +1,20 @@
+--- 
+title: Pharo on Armadeus
+---
+# Pharo on Armadeus
+
+*The [Armadeus APF51](http://www.armadeus.com/) is a reduced size processor board benefiting from a highly competitive price/performance ratio.
+Fitted with a 800 MHz i.MX51x processor, 64 MB to 512 MB LPDDR RAM, 256 MB to 32 GB SLC FLASH, a 10/100Mbits Ethernet port, 2 USB 2.0 high speed ports, and one USB OTG port, it is easily integrated into an embedded system thanks notably to its regulators and on board PHYs (Ethernet & USB).
+As usual at Armadeus systems, this board is equipped with a FPGA, here a Spartan 6A XC6SLX9, which increases considerably the hardware fonctionalities of the module.*
+
+As the APF51 run on a linux operating system, it is possible to make the Raspberry Pi VM working with a simple trick.
+So fetch the last version of the [Raspbian VM](http://files.pharo.org/vm/pharoS/raspbian/latest.zip)
+And fix the library:
+~~~~~~~~ bash
+ln -s /lib/ld-linux.so.3 /lib/ld-linux-armhf.so.3
+~~~~~~~~
+Tested on a Linux Debian Squeeze 2.6.38.8 #2 PREEMP
+Then enjoy.
+
+
+
